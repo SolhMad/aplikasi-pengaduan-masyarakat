@@ -20,7 +20,7 @@
                     </div>
             </div>
             <div class="card-footer">
-                <button type="submit" name="kirim" class="btn btn-success">DAFTER</button>
+                <button type="submit" name="kirim" class="btn btn-success">LOGIN</button>
                 <a href="index.php?page=registrasi" class="m-3">Belum Punya Account ? LOGIN!!</a>
             </div>
             </form>
