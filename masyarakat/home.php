@@ -33,7 +33,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    TABEL PENGADUAN
+                    TABEL PENGADUAN SAYA
                 </div>
                 <div class="card-body">
                     <table class="table table-striped">
