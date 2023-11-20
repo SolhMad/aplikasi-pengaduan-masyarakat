@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect("localhost", "root", "", "db_ujikom_ahmad");
+$conn = mysqli_connect("localhost", "root", "", "db_apem");
 
 ?>
 <!-- end -->

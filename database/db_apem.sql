@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2023 at 03:56 AM
+-- Generation Time: Nov 20, 2023 at 01:28 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,8 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_ujikom_ahmad`
+-- Database: `db_apem`
 --
+CREATE DATABASE IF NOT EXISTS `db_apem` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `db_apem`;
 
 -- --------------------------------------------------------
 
