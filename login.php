@@ -21,7 +21,7 @@
             </div>
             <div class="card-footer">
                 <button type="submit" name="kirim" class="btn btn-success">LOGIN</button>
-                <a href="index.php?page=registrasi" class="m-3">Belum Punya Account ? LOGIN!!</a>
+                <a href="index.php?page=registrasi" class="m-3" style="text-decoration: none;">Belum Punya Account ? REGISTRASI!!</a>
             </div>
             </form>
         </div>
