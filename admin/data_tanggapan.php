@@ -12,10 +12,9 @@
                             <tr>
                                 <th>No</th>
                                 <th>Tanggal</th>
-                                <th>Nama</th>
+                                <th>Nik</th>
                                 <th>Judul</th>
                                 <th>Laporan</th>
-                                <th>Foto</th>
                                 <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
@@ -24,14 +23,11 @@
                             <tr>
                                 <td>1.</td>
                                 <td>1/12/2023</td>
-                                <td>Abdul</td>
+                                <td>321016...</td>
                                 <td>Jalan Rusak</td>
-                                <td>Laporan jalan rusak di..</td>
-                                <td><img src="" width="100px"></td>
-                                <td>Menunggu</td>
+                                <td>Sedang di perbaiki petugas</td>
+                                <td>Selesai</td>
                                 <td>
-                                    <a href="#" class="btn btn-primary">VERIFIKASI</a>
-                                    <a href="#" class="btn btn-success">TANGGAPI</a>
                                     <a href="#" class="btn btn-danger">HAPUS</a>
                                 </td>
                             </tr>
