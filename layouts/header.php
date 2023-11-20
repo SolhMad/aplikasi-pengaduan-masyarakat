@@ -19,10 +19,18 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.php?page=registrasi">Daftar Akun</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.php?page=login">Login</a>
+            <?php if ($_SESSION["login"] == 'admin') { ?>
+              <a class="nav-link" href="index.php?page=pengaduan">Data Pengaduan</a>
+              <a class="nav-link" href="../config/aksi_logout.php">Log-out</a>
+            <?php  } elseif ($_SESSION["login"] == 'petugas') { ?>
+              <a class="nav-link" href="index.php?page=pengaduan">Data Pengaduan</a>
+              <a class="nav-link" href="../config/aksi_logout.php">Log-out</a>
+            <?php  } elseif ($_SESSION["login"] == 'masyarakat') { ?>
+              <a class="nav-link" href="../config/aksi_logout.php">Log-out</a>
+            <?php  } else { ?>
+              <a class="nav-link" href="index.php?page=registrasi">Daftar Akun</a>
+              <a class="nav-link" href="index.php?page=login">Login</a>
+            <?php  } ?>
         </ul>
       </div>
     </div>
