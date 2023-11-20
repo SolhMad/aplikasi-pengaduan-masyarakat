@@ -5,18 +5,22 @@
                 LOGIN
             </div>
             <div class="card-body">
-                <form action="" method="POST">
+                <form action="config/aksi_login.php" method="POST">
                     <div class="mb-3">
-                        <label for="username"> username </label>
+                        <label class="form-label" for="username"> username </label>
                         <input type="text" class="form-control" name="username" id="username" placeholder="Masukan Username" required>
                     </div>
                     <div class="mb-3">
-                        <label for="password"> Password </label>
+                        <label class="form-label" for="password"> Password </label>
                         <input type="password" class="form-control" name="password" id="password" placeholder="Masukan Password" required>
                     </div>
                     <div class="mb-3">
-                        <label for="telp"> Telp </label>
-                        <input type="number" class="form-control" name="telp" id="telp" placeholder="Masukan Nomor Telepon" required>
+                        <label class="form-label" for="level"> Login Sebagai </label>
+                        <select class="form-control" name="level" id="level">
+                            <option value="masyarakat">Masyarakat</option>
+                            <option value="petugas">Petugas</option>
+                            <option value="admin">Admin</option>
+                        </select>
                     </div>
             </div>
             <div class="card-footer">

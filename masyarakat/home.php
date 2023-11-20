@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <p>Selamat Datang Masyarakat</p>
+            <p>Selamat Datang <?= $_SESSION["nama"]; ?></p>
             <div class="card">
                 <div class="card-header">
                     FORM PENGADUAN
