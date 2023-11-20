@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include 'koneksi.php';
+include 'functions.php';
 
 //menangkap var yang dikirim lewat $_POST
 $username = $_POST["username"];
