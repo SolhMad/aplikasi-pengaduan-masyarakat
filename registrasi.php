@@ -8,23 +8,23 @@
         <form action="" method="POST">
           <div class="mb-3">
             <label for="nik" class="form-label">NIK</label>
-            <input type="number" class="form-control" name="nik" id="nik" placeholder="Masukan Nik Kamuh" required>
+            <input type="number" class="form-control" name="nik" id="nik" placeholder="Masukan Nik Kamuh" required autocomplete="off" autofocus>
           </div>
           <div class="mb-3">
             <label for="nama"> Nama Lengkap </label>
-            <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukan Nama Lengkap" required>
+            <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukan Nama Lengkap" required autocomplete="off">
           </div>
           <div class="mb-3">
             <label for="username"> username </label>
-            <input type="text" class="form-control" name="username" id="username" placeholder="Masukan Username" required>
+            <input type="text" class="form-control" name="username" id="username" placeholder="Masukan Username" required autocomplete="off">
           </div>
           <div class="mb-3">
             <label for="password"> Password </label>
-            <input type="password" class="form-control" name="password" id="password" placeholder="Masukan Password" required>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Masukan Password" required autocomplete="off">
           </div>
           <div class="mb-3">
             <label for="telp"> Telp </label>
-            <input type="number" class="form-control" name="telp" id="telp" placeholder="Masukan Nomor Telepon" required>
+            <input type="number" class="form-control" name="telp" id="telp" placeholder="Masukan Nomor Telepon" required autocomplete="off">
           </div>
       </div>
       <div class="card-footer">
