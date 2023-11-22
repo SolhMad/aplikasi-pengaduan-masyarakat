@@ -1,5 +1,5 @@
 <?php
-include '../config/functions.php';
+require '../config/functions.php';
 
 if (isset($_POST["kirim"])) {
 
@@ -20,6 +20,7 @@ if (isset($_POST["kirim"])) {
     }
 }
 
+$pengaduans = ambil('SELECT * FROM pengaduan');
 ?>
 <div class="container">
     <div class="row">
@@ -72,19 +73,23 @@ if (isset($_POST["kirim"])) {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1.</td>
-                                <td>Jalan Rusak</td>
-                                <td>Lorem ipsum dolor sit amet</td>
-                                <td><img src="../assets/img/4.png" alt="Ini Foto" width="80px"></td>
-                                <td>Selesai
-                                    <a href="index.php?page=tanggapan">Lihat Tanggapan</a>
-                                </td>
-                                <td>
-                                    <a href="#" class="btn btn-primary">Edit</a> |
-                                    <a href="#" class="btn btn-danger">Hapus</a>
-                                </td>
-                            </tr>
+                            <?php $i = 1; ?>
+                            <?php foreach ($pengaduans as $p) : ?>
+                                <tr>
+                                    <td><?= $i; ?></td>
+                                    <td><?= $p['judul_pengaduan']; ?></td>
+                                    <td><?= $p['isi_laporan']; ?></td>
+                                    <td><img src="../assets/img/4.png" alt="Ini Foto" width="80px"></td>
+                                    <td>Selesai
+                                        <a href="index.php?page=tanggapan">Lihat Tanggapan</a>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn btn-primary">Edit</a> |
+                                        <a href="../cofig/hapus.php?id=<?= $p['id_pengaduan'] ?>" class="btn btn-danger">Hapus</a>
+                                    </td>
+                                </tr>
+                                <?php $i++ ?>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

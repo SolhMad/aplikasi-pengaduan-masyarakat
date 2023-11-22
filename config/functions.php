@@ -1,6 +1,19 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "db_apem");
 
+function ambil($query)
+{
+    global $conn;
+    $result = mysqli_query($conn, $query);
+    $rows = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        array_push($rows, $row);
+    }
+
+    return $rows;
+}
+
+
 function tambah_pengaduan($post)
 {
     global $conn;
