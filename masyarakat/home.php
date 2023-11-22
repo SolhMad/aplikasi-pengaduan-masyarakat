@@ -1,3 +1,26 @@
+<?php
+include '../config/functions.php';
+
+if (isset($_POST["kirim"])) {
+
+    if (tambah_pengaduan($_POST) > 0) {
+        echo "
+            <script>
+                alert('Data Berhasil Dikirim');
+                document.location.href='index.php';
+            </script>
+        ";
+    } else {
+        echo "
+            <script>
+                alert('Data Gagal Dikirim');
+                document.location.href='index.php';
+            </script>
+        ";
+    }
+}
+
+?>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -7,7 +30,7 @@
                     FORM PENGADUAN
                 </div>
                 <div class="card-body">
-                    <form action="" method="POST">
+                    <form action="" method="POST" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="judul_laporan" class="form-label"> Judul Laporan </label>
                             <input type="text" class="form-control" name="judul_laporan" id="judul_laporan" placeholder="Masukan Judul Laporan" required>
@@ -18,7 +41,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="foto" class="form-label"> Foto </label>
-                            <input type="file" class="form-control" name="foto" id="foto" required>
+                            <input type="file" class="form-control" name="foto" id="foto">
                         </div>
                 </div>
                 <div class="card-footer">
@@ -28,6 +51,7 @@
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-12 mt-3">
 

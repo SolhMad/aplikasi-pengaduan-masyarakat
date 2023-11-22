@@ -41,7 +41,7 @@ if ($cek > 0) {
     echo "
         <script>
             alert('username atau password tidak terdaftar');
-            document.location.href='../index.php';
+            document.location.href='../index.php?page=login';
         </script>
     ";
 }
