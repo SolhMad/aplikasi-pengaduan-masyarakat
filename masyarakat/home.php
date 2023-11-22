@@ -85,7 +85,7 @@ $pengaduans = ambil('SELECT * FROM pengaduan');
                                     </td>
                                     <td>
                                         <a href="#" class="btn btn-primary">Edit</a> |
-                                        <a href="../cofig/hapus.php?id=<?= $p['id_pengaduan'] ?>" class="btn btn-danger">Hapus</a>
+                                        <a href="../config/hapus_masyarakat.php?id_pengaduan=<?= $p['id_pengaduan'] ?>" class="btn btn-danger">Hapus</a>
                                     </td>
                                 </tr>
                                 <?php $i++ ?>

@@ -33,6 +33,17 @@ function tambah_pengaduan($post)
     return mysqli_affected_rows($conn);
 }
 
+function hapus($id)
+{
+    global $conn;
+    mysqli_query($conn, "DELETE
+                            FROM pengaduan
+                                WHERE id_pengaduan = $id
+    ");
+
+    return mysqli_affected_rows($conn);
+}
+
 ?>
 <?php
 
