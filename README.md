@@ -26,5 +26,5 @@
 
 ## Download
 silahkan click tombol ini untuk mendownload .zip 👉
-[![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue.svg)](https://github.com/SolhMad/simple-crud/archive/master.zip)
+[![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue.svg)](https://github.com/SolhMad/apem/archive/master.zip)
 
