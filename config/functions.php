@@ -1,6 +1,7 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "db_apem");
 
+// FUNGSI MENGAMBIL DATA
 function ambil($query)
 {
     global $conn;
@@ -14,6 +15,7 @@ function ambil($query)
 }
 
 
+//FUNGSI TAMBAH DATA KE DALAM TABEL PENGADUAN
 function tambah_pengaduan($post)
 {
     global $conn;
@@ -22,10 +24,11 @@ function tambah_pengaduan($post)
     $tanggal = date('Y-m-d');
     $judul = $post["judul_laporan"];
     $isi = $post["isi_laporan"];
+    $foto = upload();
     $status = 0;
 
     $tambah = " INSERT INTO pengaduan
-                    VALUES ('','$tanggal','$nik','$judul','$isi','','$status')
+                    VALUES ('','$tanggal','$nik','$judul','$isi','$foto','$status')
     ";
 
     mysqli_query($conn, $tambah);
@@ -33,6 +36,7 @@ function tambah_pengaduan($post)
     return mysqli_affected_rows($conn);
 }
 
+//FUNGSI HAPUD DATA DARI TABEL PENGADUAN 
 function hapus($id)
 {
     global $conn;
@@ -46,6 +50,61 @@ function hapus($id)
 
 ?>
 <?php
+
+//FUNGSI UPLOAD DATA BERBENTUK GAMBAR/FOTO KE DALAM TABEL PENGADUAN
+function upload()
+{
+    $fileName = $_FILES["gambar"]["name"];
+    $fileType = $_FILES["file"]["type"];
+    $fileTmpName = $_FILES["gambar"]["tmp_name"];
+    $fileSize = $_FILES["gambar"]["size"];
+    $fileError = $_FILES["gambar"]["error"];
+
+    //cek apakah tidak ada file yang diupload
+    if (!$fileError == 4) {
+
+        echo "<script>
+                alert('Pilih Gambar Terlebih Dahulu');
+                document.location.href='index.php';
+        </script>";
+        return false;
+    }
+
+    //cek ukuran file
+    if ($fileSize > 2000000) {
+        echo "<script>
+                alert('Ukuran Gambar Terlalu Besar');
+                document.location.href='index.php';
+        </script>";
+        return false;
+    }
+
+    // cek apakah yang diupload adalah gambar
+    $ekstensiGambarValid = ["jpg", "jpeg", "png"];
+    $ekstensiGambar = explode('.', $fileName);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+
+        echo "
+                <script>
+                    alert('yang anda upload bukan gambar');
+                </script>
+            ";
+
+        return false;
+    }
+
+    // lolos pengecekan, gambar siap diupload
+    //generate nama gambar baru
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= ".";
+    $namaFileBaru .= $ekstensiGambar;
+
+    move_uploaded_file($fileTmpName, '../database/img/' . $namaFileBaru);
+
+    return $namaFileBaru;
+}
 
 // kompoen untuk mengupload file adalah
 //1.tentukan format nama

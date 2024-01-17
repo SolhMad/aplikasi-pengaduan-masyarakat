@@ -79,7 +79,7 @@ $pengaduans = ambil('SELECT * FROM pengaduan');
                                     <td><?= $i; ?></td>
                                     <td><?= $p['judul_pengaduan']; ?></td>
                                     <td><?= $p['isi_laporan']; ?></td>
-                                    <td><img src="../assets/img/4.png" alt="Ini Foto" width="80px"></td>
+                                    <td><img src="../assets/img/<? $p['foto']; ?>" alt="Ini Foto" width="80px"></td>
                                     <td>Selesai
                                         <a href="index.php?page=tanggapan">Lihat Tanggapan</a>
                                     </td>
