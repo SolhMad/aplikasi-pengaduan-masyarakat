@@ -7,12 +7,12 @@
             <div class="card-body">
                 <form action="config/aksi_login.php" method="POST">
                     <div class="mb-3">
-                        <label class="form-label" for="username"> username </label>
-                        <input type="text" class="form-control" name="username" id="username" placeholder="Masukan Username" required>
+                        <label class="form-label" for="username"> Username </label>
+                        <input type="text" class="form-control" name="username" id="username" placeholder="Masukan Username" required autofocus autocomplete="off">
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="password"> Password </label>
-                        <input type="password" class="form-control" name="password" id="password" placeholder="Masukan Password" required>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Masukan Password" required autocomplete="off">
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="level"> Login Sebagai </label>

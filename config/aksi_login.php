@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include 'koneksi.php';
+include 'functions.php';
 
 //menangkap var yang dikirim lewat $_POST
 $username = $_POST["username"];
@@ -41,7 +41,7 @@ if ($cek > 0) {
     echo "
         <script>
             alert('username atau password tidak terdaftar');
-            document.location.href='../index.php';
+            document.location.href='../index.php?page=login';
         </script>
     ";
 }
