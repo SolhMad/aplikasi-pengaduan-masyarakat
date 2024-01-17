@@ -42,7 +42,7 @@ $pengaduans = ambil('SELECT * FROM pengaduan');
                         </div>
                         <div class="mb-3">
                             <label for="foto" class="form-label"> Foto </label>
-                            <input type="file" class="form-control" name="foto" id="foto">
+                            <input type="file" class="form-control" name="gambar" id="foto">
                         </div>
                 </div>
                 <div class="card-footer">
