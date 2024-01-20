@@ -2,6 +2,16 @@
   session_start();
   include '../layouts/header.php';
 
+  if (is_null($_SESSION['nama'])) {
+    echo "
+        <script>
+          alert('Login dulu bosQ');
+          document.location.href='../index.php?page=login';
+        </script>
+    ";
+    die();
+  }
+    
   if (isset($_GET['page'])) {
     $page = $_GET['page'];
 

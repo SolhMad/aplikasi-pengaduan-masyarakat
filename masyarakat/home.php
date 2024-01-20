@@ -34,11 +34,11 @@ $pengaduans = ambil('SELECT * FROM pengaduan');
                     <form action="" method="POST" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="judul_laporan" class="form-label"> Judul Laporan </label>
-                            <input type="text" class="form-control" name="judul_laporan" id="judul_laporan" placeholder="Masukan Judul Laporan" required>
+                            <input type="text" class="form-control" name="judul_laporan" id="judul_laporan" placeholder="Masukan Judul Laporan" required autocomplete="off">
                         </div>
                         <div class="mb-3">
                             <label for="isi_laporan" class="form-label"> Isi Laporan </label>
-                            <textarea class="form-control" name="isi_laporan" placeholder="Masukan Isi Laporan" required></textarea>
+                            <textarea class="form-control" name="isi_laporan" placeholder="Masukan Isi Laporan" required autocomplete="off"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="foto" class="form-label"> Foto </label>
@@ -80,11 +80,20 @@ $pengaduans = ambil('SELECT * FROM pengaduan');
                                     <td><?= $p['judul_pengaduan']; ?></td>
                                     <td><?= $p['isi_laporan']; ?></td>
                                     <td><img src="../database/img/<?= $p['foto']; ?>" alt="Ini Foto" width="80px"></td>
-                                    <td>Selesai
-                                        <a href="index.php?page=tanggapan">Lihat Tanggapan</a>
+                                    <td>
+                                        <!-- cek dari database table pengaduan column statusnya apa -->
+                                        <?php if ($p['status'] == 0) {
+                                            echo "<span class ='badge bg-warning text-dark'>menunggu</span>";
+                                        } elseif ($p['status'] == "proses") {
+                                            echo "proses";
+                                        } else {
+                                            echo "selesai";
+                                            echo "<a href='index.php?page=tanggapan'>Lihat Tanggapan</a>";
+                                        }
+                                        ?>
+
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-primary">Edit</a> |
                                         <a href="../config/hapus_masyarakat.php?id_pengaduan=<?= $p['id_pengaduan'] ?>" class="btn btn-danger">Hapus</a>
                                     </td>
                                 </tr>
