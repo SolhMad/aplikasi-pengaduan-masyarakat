@@ -42,10 +42,16 @@ if ($cek > 0) {
         header("location:../masyarakat/");
     }
 } else {
-    echo "
+    echo
+    "
         <script>
             alert('username atau password tidak terdaftar');
-            document.location.href='../index.php?page=login';
+        </script>
+    ";
+    echo "
+        <script>
+            alert('Silahkan bikin akun yaaa');
+            document.location.href='../index.php?page=registrasi';
         </script>
     ";
 }

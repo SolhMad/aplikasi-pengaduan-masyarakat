@@ -2,13 +2,10 @@
   session_start();
   include '../layouts/header.php';
 
+  //ini program untuk menendang user NAKAL
   if (is_null($_SESSION['nama'])) {
-    echo "
-        <script>
-          alert('Login dulu bosQ');
-          document.location.href='../index.php?page=login';
-        </script>
-    ";
+    //user NAKAL dialihkan ke halaman login untuk login
+    header("Location:../index.php?page=login");
     die();
   }
     
