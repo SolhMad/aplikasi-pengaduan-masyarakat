@@ -15,7 +15,7 @@ if ($level === 'masyarakat') {
 ) {
     $login = mysqli_query($conn, "SELECT * FROM petugas WHERE `username` = '$username' AND `password` = '$password'");
 } elseif ($level === 'petugas') {
-    $login = mysqli_query($con, "SELECT * FROM masyarakat WHERE `username`= '$username' AND `password` = '$password'");
+    $login = mysqli_query($conn, "SELECT * FROM masyarakat WHERE `username`= '$username' AND `password` = '$password'");
 } else {
     $login = 0;
 }

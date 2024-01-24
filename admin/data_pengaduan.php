@@ -21,20 +21,38 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1.</td>
-                                <td>1/12/2023</td>
-                                <td>Abdul</td>
-                                <td>Jalan Rusak</td>
-                                <td>Laporan jalan rusak di..</td>
-                                <td><img src="" width="100px"></td>
-                                <td>Menunggu</td>
-                                <td>
-                                    <a href="#" class="btn btn-primary">VERIFIKASI</a>
-                                    <a href="#" class="btn btn-success">TANGGAPI</a>
-                                    <a href="#" class="btn btn-danger">HAPUS</a>
-                                </td>
-                            </tr>
+
+                            <?php
+
+                            include "../config/functions.php";
+                            $no = 1;
+                            $ambil = mysqli_query($conn, "SELECT a.*, b.* FROM pengaduan a INNER JOIN masyarakat b ON a.nik = b.nik ORDER BY id_pengaduan ASC;");
+                            while ($data = mysqli_fetch_array($ambil)) { ?>
+
+                                <tr>
+                                    <td><?= $no++ ?> </td>
+                                    <td><?= $data['tgl_pengaduan']; ?></td>
+                                    <td><?= $data['nama']; ?></td>
+                                    <td><?= $data['judul_pengaduan']; ?></td>
+                                    <td><?= $data['isi_laporan']; ?></td>
+                                    <td><img src="../database/img/<?= $data['foto'] ?>" width="100px"></td>
+                                    <td><!-- cek dari database table pengaduan column statusnya apa -->
+                                        <?php if ($data['status'] == 0) {
+                                            echo "<span class ='badge bg-warning text-dark'>menunggu</span>";
+                                        } elseif ($data['status'] == "proses") {
+                                            echo "proses";
+                                        } else {
+                                            echo "selesai";
+                                            echo "<a href='index.php?page=tanggapan'>Lihat Tanggapan</a>";
+                                        }
+                                        ?></td>
+                                    <td>
+                                        <a href="#" class="btn btn-primary">VERIFIKASI</a>
+                                        <a href="#" class="btn btn-success">TANGGAPI</a>
+                                        <a href="#" class="btn btn-danger">HAPUS</a>
+                                    </td>
+                                </tr>
+                            <?php  } ?>
                         </tbody>
                     </table>
                 </div>
