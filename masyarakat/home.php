@@ -61,7 +61,7 @@ $pengaduans = ambil('SELECT * FROM pengaduan');
                     TABEL PENGADUAN SAYA
                 </div>
                 <div class="card-body">
-                    <table class="table table-striped">
+                    <table class="table table-striped" style="max-width:100%;">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -94,7 +94,29 @@ $pengaduans = ambil('SELECT * FROM pengaduan');
 
                                     </td>
                                     <td>
-                                        <a href="../config/hapus_masyarakat.php?id_pengaduan=<?= $p['id_pengaduan'] ?>" class="btn btn-danger">Hapus</a>
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapusmodal<?= $p['id_pengaduan'] ?>">
+                                            Hapus
+                                        </button>
+
+                                        <!-- Modal HAPUS -->
+                                        <div class="modal fade" id="hapusmodal<?= $p['id_pengaduan'] ?>" tabindex="-1">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Data</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Apakah Anda YaQin akan mengapus data <br><?= $p['judul_pengaduan'] ?>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn btn-danger">
+                                                            <a href="../config/hapus_masyarakat.php?id_pengaduan=<?= $p['id_pengaduan'] ?>" style="text-decoration: none; color:white;">Hapus</a>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                                 <?php $i++ ?>
