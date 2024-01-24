@@ -29,7 +29,7 @@
               <a class="nav-link" href="../config/aksi_logout.php">Log-out</a>
             <?php  } else { ?>
               <a class="nav-link" href="index.php?page=registrasi">Daftar Akun</a>
-              <a class="nav-link" href="index.php?page=login">Login</a>
+              <a class="nav-link" href="index.php?page=login">Halo</a>
             <?php  } ?>
         </ul>
       </div>
