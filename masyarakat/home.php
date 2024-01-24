@@ -83,11 +83,11 @@ $pengaduans = ambil('SELECT * FROM pengaduan');
                                     <td>
                                         <!-- cek dari database table pengaduan column statusnya apa -->
                                         <?php if ($p['status'] == 0) {
-                                            echo "<span class ='badge bg-warning text-dark'>menunggu</span>";
+                                            echo "<span class ='badge bg-danger text-light'>Menunggu</span>";
                                         } elseif ($p['status'] == "proses") {
-                                            echo "proses";
+                                            echo "<span class ='badge bg-warning text-dark'>proses</span>";
                                         } else {
-                                            echo "selesai";
+                                            echo "<span class ='badge bg-success text-light'>Selesai</span>";
                                             echo "<a href='index.php?page=tanggapan'>Lihat Tanggapan</a>";
                                         }
                                         ?>
