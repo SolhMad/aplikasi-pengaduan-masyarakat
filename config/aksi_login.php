@@ -15,7 +15,7 @@ if ($level === 'masyarakat') {
 ) {
     $login = mysqli_query($conn, "SELECT * FROM petugas WHERE `username` = '$username' AND `password` = '$password'");
 } elseif ($level === 'petugas') {
-    $login = mysqli_query($con, "SELECT * FROM masyarakat WHERE `username`= '$username' AND `password` = '$password'");
+    $login = mysqli_query($conn, "SELECT * FROM petugas WHERE `username`= '$username' AND `password` = '$password'");
 } else {
     $login = 0;
 }
@@ -46,12 +46,7 @@ if ($cek > 0) {
     "
         <script>
             alert('username atau password tidak terdaftar');
-        </script>
-    ";
-    echo "
-        <script>
-            alert('Silahkan bikin akun yaaa');
-            document.location.href='../index.php?page=registrasi';
+            document.location.href='../index.php?page=login';
         </script>
     ";
 }

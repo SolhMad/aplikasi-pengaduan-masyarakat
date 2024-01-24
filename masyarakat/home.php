@@ -83,11 +83,11 @@ $pengaduans = ambil('SELECT * FROM pengaduan');
                                     <td>
                                         <!-- cek dari database table pengaduan column statusnya apa -->
                                         <?php if ($p['status'] == 0) {
-                                            echo "<span class ='badge bg-warning text-dark'>menunggu</span>";
+                                            echo "<span class ='badge bg-danger text-light'>Menunggu</span>";
                                         } elseif ($p['status'] == "proses") {
-                                            echo "proses";
+                                            echo "<span class ='badge bg-warning text-dark'>proses</span>";
                                         } else {
-                                            echo "selesai";
+                                            echo "<span class ='badge bg-success text-light'>Selesai</span>";
                                             echo "<a href='index.php?page=tanggapan'>Lihat Tanggapan</a>";
                                         }
                                         ?>
@@ -106,14 +106,17 @@ $pengaduans = ambil('SELECT * FROM pengaduan');
                                                         <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Data</h1>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
-                                                    <div class="modal-body">
-                                                        Apakah Anda YaQin akan mengapus data <br><?= $p['judul_pengaduan'] ?>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-danger">
-                                                            <a href="../config/hapus_masyarakat.php?id_pengaduan=<?= $p['id_pengaduan'] ?>" style="text-decoration: none; color:white;">Hapus</a>
-                                                        </button>
-                                                    </div>
+                                                    <form action="edit_data.php" method="POST">
+                                                        <input type="hidden" name="id_pengaduan" value="<?= $p['id_pengaduan'] ?>">
+                                                        <div class="modal-body">
+                                                            Apakah Anda YaQin akan mengapus data <br><?= $p['judul_pengaduan'] ?>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="submit" name="hapus_pengaduan" class="btn btn-danger">
+                                                                Hapus
+                                                            </button>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
