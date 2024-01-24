@@ -23,6 +23,9 @@ if (isset($_POST['hapus_pengaduan'])) {
                 document.location.href='index.php?page=pengaduan';
             </script>";
     } else {
-        echo "Data tidak ditemukan.";
+        echo "<script>
+                 alert('Data Gagal di HAPUS');
+                document.location.href='index.php?page=pengaduan';
+            </script>";
     }
 }
