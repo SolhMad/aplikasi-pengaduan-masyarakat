@@ -35,7 +35,7 @@
                                     <td><?= $data['nama']; ?></td>
                                     <td><?= $data['judul_pengaduan']; ?></td>
                                     <td><?= $data['isi_laporan']; ?></td>
-                                    <td><img src="../database/img/<?= $data['foto'] ?>" width="100px"></td>
+                                    <td><img src="../database/img/<?= $data['foto']; ?>" width="50px" alt="syalah"></td>
                                     <td><!-- cek dari database table pengaduan column statusnya apa -->
                                         <?php if ($data['status'] == 0) {
                                             echo "<span class ='badge bg-danger text-light'>Menunggu</span>";

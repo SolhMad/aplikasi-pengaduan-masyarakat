@@ -2,10 +2,11 @@
   session_start();
   include '../layouts/header.php';
   // ini agar user tidak bisa masuk lewat url ke dalam halaman ADMIN
-  // if (is_null($_SESSION['nama_petugas'])) {
-  //   header("Location:../index.php?page=login");
-  //   die();
-  // }
+  if (is_null($_SESSION['nama_petugas'])) {
+    header("Location:../index.php?page=login");
+    die();
+  }
+
   
 
   if (isset($_GET['page'])) {
