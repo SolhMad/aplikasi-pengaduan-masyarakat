@@ -47,3 +47,37 @@ if (isset($_POST['hapus_tanggapan'])) {
             </script>";
     }
 }
+
+//untuk hapus Petugas
+if (isset($_POST['hapus_petugas'])) {
+    $id_petugas = mysqli_real_escape_string($conn, $_POST["id_petugas"]);
+    $delete = mysqli_query($conn, "DELETE FROM petugas WHERE id_petugas = '$id_petugas'");
+    if ($delete) {
+        echo "<script>
+                 alert('Data Berhasil di Hapus');
+                document.location.href='index.php?page=petugas';
+            </script>";
+    } else {
+        echo "<script>
+                 alert('Data Gagal di HAPUS');
+                document.location.href='index.php?page=petugas';
+            </script>";
+    }
+}
+
+//untuk hapus masyarakat
+if (isset($_POST['hapus_masyarakat'])) {
+    $nik = mysqli_real_escape_string($conn, $_POST["nik"]);
+    $delete = mysqli_query($conn, "DELETE FROM masyarakat WHERE nik = '$nik'");
+    if ($delete) {
+        echo "<script>
+                 alert('Data Berhasil di Hapus');
+                document.location.href='index.php?page=masyarakat';
+            </script>";
+    } else {
+        echo "<script>
+                 alert('Data Gagal di HAPUS');
+                document.location.href='index.php?page=masyarakat';
+            </script>";
+    }
+}
