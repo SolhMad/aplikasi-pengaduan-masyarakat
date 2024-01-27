@@ -7,7 +7,6 @@ if (isset($_POST["kirim"])) {
         echo "
             <script>
                 alert('Data Berhasil Dikirim');
-                document.location.href='index.php';
             </script>
         ";
     } else {

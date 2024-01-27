@@ -4,9 +4,9 @@ session_start();
 include 'functions.php';
 
 //menangkap var yang dikirim lewat $_POST
-$username = $_POST["username"];
-$password = md5($_POST["password"]);
-$level = $_POST["level"];
+$username = htmlspecialchars($_POST["username"]);
+$password = htmlspecialchars(md5($_POST["password"]));
+$level = htmlspecialchars($_POST["level"]);
 
 //pengkondisian jika yang masuk levelnya masyarakat maka mengambil dari TABEL masyarakat dan selain masyarakat mengambil dari TABEL PETUGAS
 if ($level === 'masyarakat') {
