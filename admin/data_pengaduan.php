@@ -142,7 +142,7 @@
                                                             <div class="row mb-3">
                                                                 <label class="label col-md-4">Tanggapan</label>
                                                                 <div class="col-md-8">
-                                                                    <textarea type="text" name="tanggapan" class="form-control" required></textarea>
+                                                                    <textarea type="text" name="tanggapan" class="form-control" required autofocus autocomplete="off"></textarea>
                                                                 </div>
                                                             </div>
                                                     </div>
