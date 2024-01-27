@@ -11,9 +11,6 @@ $level = $_POST["level"];
 //pengkondisian jika yang masuk levelnya masyarakat maka mengambil dari TABEL masyarakat dan selain masyarakat mengambil dari TABEL PETUGAS
 if ($level === 'masyarakat') {
     $login = mysqli_query($conn, "SELECT * FROM masyarakat WHERE `username` = '$username' AND `password` = '$password'");
-} elseif ($level === 'admin'
-) {
-    $login = mysqli_query($conn, "SELECT * FROM petugas WHERE `username` = '$username' AND `password` = '$password'");
 } elseif ($level === 'petugas') {
     $login = mysqli_query($conn, "SELECT * FROM petugas WHERE `username`= '$username' AND `password` = '$password'");
 } else {

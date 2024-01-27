@@ -35,7 +35,7 @@
                                     <td><?= $data['nama']; ?></td>
                                     <td><?= $data['judul_pengaduan']; ?></td>
                                     <td><?= $data['isi_laporan']; ?></td>
-                                    <td><img src="../database/img/<?= $data['foto'] ?>" width="100px"></td>
+                                    <td><img src="../database/img/<?= $data['foto']; ?>" width="50px" alt="syalah"></td>
                                     <td><!-- cek dari database table pengaduan column statusnya apa -->
                                         <?php if ($data['status'] == 0) {
                                             echo "<span class ='badge bg-danger text-light'>Menunggu</span>";
@@ -43,9 +43,9 @@
                                             echo "<span class ='badge bg-warning text-dark'>Proses</span>";
                                         } else {
                                             echo "<span class ='badge bg-success text-light'>Selesai</span>";
-                                            echo "<a href='index.php?page=tanggapan'>Lihat Tanggapan</a>";
                                         }
-                                        ?></td>
+                                        ?>
+                                    </td>
                                     <td>
                                         <!-- VERIFIKASI -->
                                         <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verifikasi<?= $data['id_pengaduan'] ?>">VERIFIKASI</a>
@@ -147,12 +147,12 @@
                                                             </div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="submit" name="kirim" class="btn btn-primary">Tanggapi</button>
+                                                        <button type="submit" name="tanggaphi" class="btn btn-primary">Tanggapi</button>
                                                     </div>
                                                     </form>
 
                                                     <?php
-                                                    if (isset($_POST["kirim"])) {
+                                                    if (isset($_POST["tanggaphi"])) {
                                                         //menampug data
                                                         $id_pengaduan = $_POST["id_pengaduan"];
                                                         $id_petugas = $_SESSION['id_petugas'];
@@ -162,16 +162,25 @@
                                                         //insert data
                                                         $query = mysqli_query($conn, "INSERT INTO tanggapan VALUES ('','$id_pengaduan','$tanggal','$tanggapan','$id_petugas')");
 
-                                                        if ($tanggapan != null) {
-                                                            $update = mysqli_query($conn, "UPDATE pengaduan SET status = 'selesai' WHERE id_pengaduan = '$id_pengaduan'");
-                                                        }
+                                                        if ($query) {
+                                                            if ($tanggapan != null) {
+                                                                $update = mysqli_query($conn, "UPDATE pengaduan SET status = 'selesai' WHERE id_pengaduan = '$id_pengaduan'");
+                                                            }
+                                                            echo
+                                                            "<script>
+                                                                alert('Data Berhasil di Masukan');
+                                                                document.location.href='index.php?page=pengaduan';
+                                                            </script>
+                                                            ";
+                                                        } else {
 
-                                                        echo
-                                                        "<script>
-                                                            alert('Data Berhasil di Masukan');
-                                                            document.location.href='index.php?page=pengaduan';
-                                                        </script>
-                                                    ";
+                                                            echo
+                                                            "<script>
+                                                                alert('Data Berhasil di Masukan');
+                                                                document.location.href='index.php?page=pengaduan';
+                                                            </script>
+                                                            ";
+                                                        }
                                                     }
 
 
