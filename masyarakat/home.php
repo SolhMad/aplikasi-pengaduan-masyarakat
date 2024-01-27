@@ -1,7 +1,7 @@
 <?php
 require '../config/functions.php';
 
-if (isset($_POST["kirim"])) {
+if (isset($_POST["kirim_pengaduan"])) {
 
     if (tambah_pengaduan($_POST) > 0) {
         echo "
@@ -19,7 +19,6 @@ if (isset($_POST["kirim"])) {
     }
 }
 
-$pengaduans = ambil('SELECT * FROM pengaduan');
 ?>
 <div class="container">
     <div class="row">
@@ -45,7 +44,7 @@ $pengaduans = ambil('SELECT * FROM pengaduan');
                         </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" name="kirim" class="btn btn-success">Kirim</button>
+                    <button type="submit" name="kirim_pengaduan" class="btn btn-success">Kirim</button>
                 </div>
                 </form>
             </div>
@@ -73,7 +72,10 @@ $pengaduans = ambil('SELECT * FROM pengaduan');
                         </thead>
                         <tbody>
                             <?php $i = 1; ?>
-                            <?php foreach ($pengaduans as $p) : ?>
+                            <?php
+                            $nik = $_SESSION['nik'];
+                            $query = mysqli_query($conn, "SELECT * FROM pengaduan WHERE nik = '$nik'");
+                            while ($p = mysqli_fetch_array($query)) : ?>
                                 <tr>
                                     <td><?= $i; ?></td>
                                     <td><?= $p['judul_pengaduan']; ?></td>
@@ -120,7 +122,7 @@ $pengaduans = ambil('SELECT * FROM pengaduan');
                                     </td>
                                 </tr>
                                 <?php $i++ ?>
-                            <?php endforeach; ?>
+                            <?php endwhile; ?>
                         </tbody>
                     </table>
                 </div>

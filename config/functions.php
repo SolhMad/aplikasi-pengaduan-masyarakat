@@ -1,7 +1,7 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "db_apem");
 
-// FUNGSI MENGAMBIL DATA
+// FUNGSI UNTUK MENGAMBIL DATA
 function ambil($query)
 {
     global $conn;
@@ -97,7 +97,7 @@ function upload()
     }
 
     // cek jika ukuran gambar terlalu besar
-    if ($ukuranFile > 1000000) {
+    if ($ukuranFile > 10000000) {
 
         echo "
                 <script>
