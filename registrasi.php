@@ -39,15 +39,15 @@
 
 <?php
 
-include 'config/functions.php';
+include 'config/koneksi.php';
 if (isset($_POST["kirim"])) {
 
   //TANGKAP DATA DARI VAR POST DI DALAM FORM
-  $nik = $_POST["nik"];
-  $nama = $_POST["nama"];
-  $username = $_POST["username"];
-  $password = md5($_POST["password"]);
-  $telp = $_POST["telp"];
+  $nik = htmlspecialchars($_POST["nik"]);
+  $nama = htmlspecialchars($_POST["nama"]);
+  $username = htmlspecialchars($_POST["username"]);
+  $password = htmlspecialchars(md5($_POST["password"]));
+  $telp = htmlspecialchars($_POST["telp"]);
   $level = 'masyarakat';
 
   //INSERT DATA KE TABEL MASYARAKAT

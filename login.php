@@ -19,7 +19,6 @@
                         <select class="form-control" name="level" id="level">
                             <option value="masyarakat">Masyarakat</option>
                             <option value="petugas">Petugas</option>
-                            <option value="admin">Admin</option>
                         </select>
                     </div>
             </div>

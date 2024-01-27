@@ -4,9 +4,10 @@
 
             <div class="card">
                 <div class="card-header">
-                    DATA PENGADUAN
+                    DATA TANGGAPAN
                 </div>
                 <div class="card-body">
+                    <a href="export_tanggapan.php" class="btn btn-success" target="_blank"> Export Excel</a>
                     <table class="table table-striped">
                         <thead>
                             <tr>

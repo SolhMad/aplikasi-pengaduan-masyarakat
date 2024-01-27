@@ -9,6 +9,7 @@ echo "
         document.location.href='../index.php';
     </script>
 ";
+die();
 
 ?>
 <!-- end -->

@@ -7,7 +7,6 @@ if (isset($_POST["kirim"])) {
         echo "
             <script>
                 alert('Data Berhasil Dikirim');
-                document.location.href='index.php';
             </script>
         ";
     } else {
@@ -89,7 +88,7 @@ $pengaduans = ambil('SELECT * FROM pengaduan');
                                         } else {
                                             echo "<span class ='badge bg-success text-light'>Selesai</span>";
                                             echo "</br>";
-                                            echo "<a href='index.php?page=tanggapan'>Lihat Tanggapan</a>";
+                                            echo "<a href='index.php?page=tanggapan&id_pengaduan=$p[id_pengaduan]'>Lihat Tanggapan</a>";
                                         }
                                         ?>
 

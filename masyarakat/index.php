@@ -3,11 +3,11 @@
   include '../layouts/header.php';
 
   //ini program untuk menendang user NAKAL
-  if (is_null($_SESSION['nama'])) {
-    //user NAKAL dialihkan ke halaman login untuk login
-    header("Location:../index.php?page=login");
-    die();
-  }
+  // if (empty($_SESSION['login'] == "masyarakat")) {
+  //   //user NAKAL dialihkan ke halaman login untuk login
+  //   header("Location:../index.php?page=login");
+  //   die();
+  // }
     
   if (isset($_GET['page'])) {
     $page = $_GET['page'];
