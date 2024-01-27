@@ -1,25 +1,6 @@
 <?php
-require '../config/functions.php';
+require '../config/koneksi.php';
 
-if (isset($_POST["kirim"])) {
-
-    if (tambah_pengaduan($_POST) > 0) {
-        echo "
-            <script>
-                alert('Data Berhasil Dikirim');
-            </script>
-        ";
-    } else {
-        echo "
-            <script>
-                alert('Data Gagal Dikirim');
-                document.location.href='index.php';
-            </script>
-        ";
-    }
-}
-
-$pengaduans = ambil('SELECT * FROM pengaduan');
 ?>
 <div class="container">
     <div class="row">
@@ -41,13 +22,46 @@ $pengaduans = ambil('SELECT * FROM pengaduan');
                         </div>
                         <div class="mb-3">
                             <label for="foto" class="form-label"> Foto </label>
-                            <input type="file" class="form-control" name="gambar" id="foto">
+                            <input type="file" class="form-control" name="foto" id="foto">
                         </div>
                 </div>
                 <div class="card-footer">
                     <button type="submit" name="kirim" class="btn btn-success">Kirim</button>
                 </div>
                 </form>
+                <?php
+                if (isset($_POST['kirim'])) {
+
+                    $nik = $_SESSION["nik"];
+                    $judul = $_POST["judul_laporan"];
+                    $isi = $_POST["isi_laporan"];
+                    $status = 0;
+                    $tanggal = date('Y-m-d');
+                    $foto = $_FILES['foto']['name'];
+                    $tmp = $_FILES['foto']['tmp_name'];
+                    $lokasi = '../database/img/';
+                    $nama_foto = rand(0, 999) . '-' . $foto;
+
+                    move_uploaded_file($tmp, $lokasi . $nama_foto);
+                    $query = mysqli_query($conn, "INSERT INTO pengaduan VALUES('','$tanggal','$nik','$judul','$isi','$nama_foto','$status')");
+                    if ($query) {
+
+                        echo "
+                            <script>
+                             alert('Data Berhasil Dikirim');
+                             document.location.href='index.php';
+                         </script>
+                        ";
+                    } else {
+                        echo "
+                            <script>
+                                alert('Data Gagal Dikirim');
+                                document.location.href='index.php';
+                         </script>
+                        ";
+                    }
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -73,7 +87,10 @@ $pengaduans = ambil('SELECT * FROM pengaduan');
                         </thead>
                         <tbody>
                             <?php $i = 1; ?>
-                            <?php foreach ($pengaduans as $p) : ?>
+                            <?php
+                            $nik = $_SESSION['nik'];
+                            $query = mysqli_query($conn, "SELECT * FROM pengaduan WHERE nik = '$nik'");
+                            while ($p = mysqli_fetch_array($query)) : ?>
                                 <tr>
                                     <td><?= $i; ?></td>
                                     <td><?= $p['judul_pengaduan']; ?></td>
@@ -94,33 +111,36 @@ $pengaduans = ambil('SELECT * FROM pengaduan');
 
                                     </td>
                                     <td>
-                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapusmodal<?= $p['id_pengaduan'] ?>">
-                                            Hapus
-                                        </button>
-
                                         <!-- Modal HAPUS -->
-                                        <div class="modal fade" id="hapusmodal<?= $p['id_pengaduan'] ?>" tabindex="-1">
+                                        <!-- HAPUS -->
+                                        <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapus<?= $p['nik'] ?>">HAPUS</a>
+                                        <!-- modal HAPUS -->
+                                        <div class="modal fade" id="hapus<?= $p['nik'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Data</h1>
+                                                        <h1 class="modal-title fs-5" id="hapusLabel">Hapus Data</h1>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        Apakah Anda YaQin akan mengapus data <br><?= $p['judul_pengaduan'] ?>
+                                                        <form action="edit_data.php" method="POST">
+                                                            <input type="hidden" name="id_pengaduan" class="form-control" value="<?= $p['id_pengaduan']; ?>">
+                                                            <p>Yakin mau dihapus data <br> <?= $p['judul_pengaduan']; ?>?</p>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-danger">
-                                                            <a href="../config/hapus_masyarakat.php?id_pengaduan=<?= $p['id_pengaduan'] ?>" style="text-decoration: none; color:white;">Hapus</a>
-                                                        </button>
+                                                        <button type="submit" name="hapus_pengaduan" class="btn btn-danger">Hapus</button>
                                                     </div>
+                                                    </form>
+
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- /modal-HAPUS -->
+                                        <!-- /HAPUS -->
                                     </td>
                                 </tr>
                                 <?php $i++ ?>
-                            <?php endforeach; ?>
+                            <?php endwhile; ?>
                         </tbody>
                     </table>
                 </div>
