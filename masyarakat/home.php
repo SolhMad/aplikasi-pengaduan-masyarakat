@@ -1,5 +1,5 @@
 <?php
-require '../config/functions.php';
+require '../config/koneksi.php';
 
 ?>
 <div class="container">
