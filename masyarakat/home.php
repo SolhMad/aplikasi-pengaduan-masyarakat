@@ -111,29 +111,32 @@ require '../config/functions.php';
 
                                     </td>
                                     <td>
-                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapusmodal<?= $p['id_pengaduan'] ?>">
-                                            Hapus
-                                        </button>
-
                                         <!-- Modal HAPUS -->
-                                        <div class="modal fade" id="hapusmodal<?= $p['id_pengaduan'] ?>" tabindex="-1">
+                                        <!-- HAPUS -->
+                                        <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapus<?= $p['nik'] ?>">HAPUS</a>
+                                        <!-- modal HAPUS -->
+                                        <div class="modal fade" id="hapus<?= $p['nik'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Data</h1>
+                                                        <h1 class="modal-title fs-5" id="hapusLabel">Hapus Data</h1>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        Apakah Anda YaQin akan mengapus data <br><?= $p['judul_pengaduan'] ?>
+                                                        <form action="edit_data.php" method="POST">
+                                                            <input type="hidden" name="id_pengaduan" class="form-control" value="<?= $p['id_pengaduan']; ?>">
+                                                            <p>Yakin mau dihapus data <br> <?= $p['judul_pengaduan']; ?>?</p>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-danger">
-                                                            <a href="../config/hapus_masyarakat.php?id_pengaduan=<?= $p['id_pengaduan'] ?>" style="text-decoration: none; color:white;">Hapus</a>
-                                                        </button>
+                                                        <button type="submit" name="hapus_pengaduan" class="btn btn-danger">Hapus</button>
                                                     </div>
+                                                    </form>
+
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- /modal-HAPUS -->
+                                        <!-- /HAPUS -->
                                     </td>
                                 </tr>
                                 <?php $i++ ?>
