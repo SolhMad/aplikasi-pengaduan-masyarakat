@@ -1,47 +1,6 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "db_apem");
 
-// FUNGSI UNTUK MENGAMBIL DATA
-function ambil($query)
-{
-    global $conn;
-    $result = mysqli_query($conn, $query);
-    $rows = [];
-    while ($row = mysqli_fetch_assoc($result)) {
-        array_push($rows, $row);
-    }
-
-    return $rows;
-}
-
-
-//FUNGSI TAMBAH DATA KE DALAM TABEL PENGADUAN
-function tambah_pengaduan($post)
-{
-    global $conn;
-
-    $nik = $_SESSION["nik"];
-    $tanggal = date('Y-m-d');
-    $judul = $post["judul_laporan"];
-    $isi = $post["isi_laporan"];
-    $foto = upload();
-    $status = 0;
-
-    // Periksa apakah $foto tidak kosong sebelum mengeksekusi query
-    if (!empty($foto)) {
-        $tambah = "INSERT INTO pengaduan
-                    VALUES ('', '$tanggal', '$nik', '$judul', '$isi', '$foto', '$status')";
-
-        mysqli_query($conn, $tambah); //insert data ke dalam database
-
-        return mysqli_affected_rows($conn);
-    } else {
-        // Foto kosong, tidak perlu menjalankan query, kembalikan 0
-        return 0;
-    }
-}
-
-
 //FUNGSI HAPUD DATA DARI TABEL PENGADUAN 
 function hapus($id)
 {

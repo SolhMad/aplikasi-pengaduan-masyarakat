@@ -1,24 +1,6 @@
 <?php
 require '../config/functions.php';
 
-if (isset($_POST["kirim_pengaduan"])) {
-
-    if (tambah_pengaduan($_POST) > 0) {
-        echo "
-            <script>
-                alert('Data Berhasil Dikirim');
-            </script>
-        ";
-    } else {
-        echo "
-            <script>
-                alert('Data Gagal Dikirim');
-                document.location.href='index.php';
-            </script>
-        ";
-    }
-}
-
 ?>
 <div class="container">
     <div class="row">
@@ -40,13 +22,46 @@ if (isset($_POST["kirim_pengaduan"])) {
                         </div>
                         <div class="mb-3">
                             <label for="foto" class="form-label"> Foto </label>
-                            <input type="file" class="form-control" name="gambar" id="foto">
+                            <input type="file" class="form-control" name="foto" id="foto">
                         </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" name="kirim_pengaduan" class="btn btn-success">Kirim</button>
+                    <button type="submit" name="kirim" class="btn btn-success">Kirim</button>
                 </div>
                 </form>
+                <?php
+                if (isset($_POST['kirim'])) {
+
+                    $nik = $_SESSION["nik"];
+                    $judul = $_POST["judul_laporan"];
+                    $isi = $_POST["isi_laporan"];
+                    $status = 0;
+                    $tanggal = date('Y-m-d');
+                    $foto = $_FILES['foto']['name'];
+                    $tmp = $_FILES['foto']['tmp_name'];
+                    $lokasi = '../database/img/';
+                    $nama_foto = rand(0, 999) . '-' . $foto;
+
+                    move_uploaded_file($tmp, $lokasi . $nama_foto);
+                    $query = mysqli_query($conn, "INSERT INTO pengaduan VALUES('','$tanggal','$nik','$judul','$isi','$nama_foto','$status')");
+                    if ($query) {
+
+                        echo "
+                            <script>
+                             alert('Data Berhasil Dikirim');
+                             document.location.href='index.php';
+                         </script>
+                        ";
+                    } else {
+                        echo "
+                            <script>
+                                alert('Data Gagal Dikirim');
+                                document.location.href='index.php';
+                         </script>
+                        ";
+                    }
+                }
+                ?>
             </div>
         </div>
     </div>
