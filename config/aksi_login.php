@@ -30,7 +30,7 @@ if ($cek > 0) {
     } elseif ($data['level'] == 'petugas') {
         $_SESSION['id_petugas'] = $data['id_petugas'];
         $_SESSION['nama_petugas'] = $data['nama_petugas'];
-        $_SESSION['login'] = "admin";
+        $_SESSION['login'] = "petugas";
         header("location:../admin/");
     } elseif ($data['level'] == 'masyarakat') {
         $_SESSION['nik'] = $data['nik'];

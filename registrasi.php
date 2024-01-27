@@ -39,7 +39,7 @@
 
 <?php
 
-include 'config/functions.php';
+include 'config/koneksi.php';
 if (isset($_POST["kirim"])) {
 
   //TANGKAP DATA DARI VAR POST DI DALAM FORM
