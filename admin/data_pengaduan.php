@@ -24,7 +24,7 @@
 
                             <?php
 
-                            include "../config/functions.php";
+                            include "../config/koneksi.php";
                             $no = 1;
                             $ambil = mysqli_query($conn, "SELECT a.*, b.* FROM pengaduan a INNER JOIN masyarakat b ON a.nik = b.nik ORDER BY id_pengaduan ASC;");
                             while ($data = mysqli_fetch_array($ambil)) { ?>

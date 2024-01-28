@@ -22,7 +22,7 @@
                         <tbody>
                             <?php
 
-                            include "../config/functions.php";
+include "../config/koneksi.php";
                             $query = mysqli_query($conn, "SELECT * FROM petugas");
                             $no = 1;
                             while ($data = mysqli_fetch_array($query)) {

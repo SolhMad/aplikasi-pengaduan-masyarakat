@@ -1,6 +1,6 @@
 <?php
 
-include "../config/functions.php";
+include "../config/koneksi.php";
 
 //untuk hapus pengaduan
 if (isset($_POST['hapus_pengaduan'])) {
