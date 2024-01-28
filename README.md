@@ -9,8 +9,7 @@
 
 ## Instalasi
 ```bash
-- git clone https://github.com/SolhMad/apem.git
-- cd apem
+- Download dulu, lalu ekstrak
 - Buatlah database dengan nama db_apem
 - Import db_apem.sql (yg di dalam folder database) di dalam database tersebut
 - Aplikasi Pengaduan Masyarakat Siap Digunakan 
@@ -20,8 +19,7 @@
 ✔ Menggunakan bahasa PHP, Mysql, dan Bootstrap 5.3.2 </br>
 ✔ Login & Logout </br>
 ✔ CRUD Data </br>
-✔ Search Data </br>
-✔ Double Dashbor admin & masyarakat </br>
+✔ Dashbor petugas, admin & masyarakat </br>
 
 
 ## Download
