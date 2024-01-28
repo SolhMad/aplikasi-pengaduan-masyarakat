@@ -19,6 +19,7 @@ if (isset($_POST['hapus_pengaduan'])) {
 
         // Hapus data yg id_pengaduan = $id_pengaduan
         mysqli_query($conn, "DELETE FROM pengaduan WHERE id_pengaduan = '$id_pengaduan'");
+        mysqli_query($conn, "DELETE FROM tanggapan WHERE id_pengaduan = '$id_pengaduan'");
         echo "<script>
                  alert('Data Berhasil di Hapus');
                 document.location.href='index.php?page=pengaduan';
@@ -34,8 +35,10 @@ if (isset($_POST['hapus_pengaduan'])) {
 //untuk hapus Tanggapan
 if (isset($_POST['hapus_tanggapan'])) {
     $id_tanggapan = mysqli_real_escape_string($conn, $_POST["id_tanggapan"]);
-    $delete = mysqli_query($conn, "DELETE FROM tanggapan WHERE id_tanggapan = '$id_tanggapan'");
-    if ($delete) {
+    $id_pengaduan = mysqli_real_escape_string($conn, $_POST["id_pengaduan"]);
+    $h_tanggapan = mysqli_query($conn, "DELETE FROM tanggapan WHERE id_tanggapan = '$id_tanggapan'");
+    $h_pengaduan = mysqli_query($conn, "DELETE FROM pengaduan WHERE id_pengaduan = '$id_pengaduan'");
+    if ($h_tanggapan && $h_pengaduan) {
         echo "<script>
                  alert('Data Berhasil di Hapus');
                 document.location.href='index.php?page=tanggapan';
