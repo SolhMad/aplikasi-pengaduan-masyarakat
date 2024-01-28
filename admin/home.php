@@ -1,17 +1,17 @@
 <?php
 
 include "../config/koneksi.php";
-$masyarakat = mysqli_query($conn, "SELECT * FROM masyarakat");
-$jml_masyarakat = mysqli_num_rows($masyarakat);
+                                        $masyarakat = mysqli_query($conn, "SELECT * FROM masyarakat"); //mengambil semua data dari tabel masyarakat
+                                        $jml_masyarakat = mysqli_num_rows($masyarakat); //menggunakan mysqli_num_rows untuk menghitung berapa data yg ada pada tabel masyarakat
 
-$pengaduan = mysqli_query($conn, "SELECT * FROM pengaduan");
-$jml_pengaduan = mysqli_num_rows($pengaduan);
+                                        $pengaduan = mysqli_query($conn, "SELECT * FROM pengaduan"); //mengambil semua data dari tabel pengaduan
+                                        $jml_pengaduan = mysqli_num_rows($pengaduan); //menggunakan mysqli_num_rows untuk menghitung berapa data yg ada pada tabel pengaduan
 
-$tanggapan = mysqli_query($conn, "SELECT * FROM tanggapan");
-$jml_tanggapan = mysqli_num_rows($tanggapan);
+                                        $tanggapan = mysqli_query($conn, "SELECT * FROM tanggapan"); //mengambil semua data dari tabel tanggapan
+                                        $jml_tanggapan = mysqli_num_rows($tanggapan); //menggunakan mysqli_num_rows untuk menghitung berapa data yg ada pada tabel tanggapan
 
-$petugas = mysqli_query($conn, "SELECT * FROM petugas");
-$jml_petugas = mysqli_num_rows($petugas);
+                                        $petugas = mysqli_query($conn, "SELECT * FROM petugas"); //mengambil semua data dari tabel petugas
+                                        $jml_petugas = mysqli_num_rows($petugas);//menggunakan mysqli_num_rows untuk menghitung berapa data yg ada pada tabel petugas
 
 ?>
 <div class="container">

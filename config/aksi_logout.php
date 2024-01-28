@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-session_destroy();
+session_destroy();//menghentikan session yg sudah dibuat saat login
 
 echo "
     <script>

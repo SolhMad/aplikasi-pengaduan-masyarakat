@@ -24,9 +24,9 @@
                             <?php
 
                             include "../config/koneksi.php";
-                            $query = mysqli_query($conn, "SELECT a.*,b.* FROM tanggapan a INNER JOIN pengaduan b ON a.id_pengaduan = b.id_pengaduan");
+                            $query = mysqli_query($conn, "SELECT a.*,b.* FROM tanggapan a INNER JOIN pengaduan b ON a.id_pengaduan = b.id_pengaduan");//query data dari tabel tanggapan dan pengaduan menggunakan INER JOIN
                             $no = 1;
-                            while ($data = mysqli_fetch_array($query)) {
+                            while ($data = mysqli_fetch_assoc($query)) {
                             ?>
                                 <tr>
                                     <td><?= $no++; ?></td>

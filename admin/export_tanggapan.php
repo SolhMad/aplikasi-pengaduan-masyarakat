@@ -25,6 +25,8 @@ header("Content-Disposition: attachment; filename = Data Pengaduan dan Tanggapan
         <?php
 
         include "../config/koneksi.php";
+
+        //sintaks sql untuk mengambil data dari pengaduan dan tanggapan menggunakan INNER JOIN 
         $query = mysqli_query($conn, "SELECT a.*,b.* FROM tanggapan a INNER JOIN pengaduan b ON a.id_pengaduan = b.id_pengaduan");
         $no = 1;
         while ($data = mysqli_fetch_array($query)) {

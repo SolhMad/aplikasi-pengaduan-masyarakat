@@ -5,7 +5,7 @@
                 LOGIN
             </div>
             <div class="card-body">
-                <form action="config/aksi_login.php" method="POST">
+                <form action="config/aksi_login.php" method="POST"><!-- data login ini dikirim ke config/aksi_login.php -->
                     <div class="mb-3">
                         <label class="form-label" for="username"> Username </label>
                         <input type="text" class="form-control" name="username" id="username" placeholder="Masukan Username" required autofocus autocomplete="off">

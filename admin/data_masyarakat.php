@@ -21,9 +21,8 @@
                         </thead>
                         <tbody>
                             <?php
-
-include "../config/koneksi.php";
-                            $query = mysqli_query($conn, "SELECT * FROM masyarakat");
+                            include "../config/koneksi.php";
+                            $query = mysqli_query($conn, "SELECT * FROM masyarakat"); //query data dari tabel masyarakat
                             $no = 1;
                             while ($data = mysqli_fetch_array($query)) {
                             ?>

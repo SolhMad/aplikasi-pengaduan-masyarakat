@@ -31,7 +31,7 @@ require '../config/koneksi.php';
                 </form>
                 <?php
                 if (isset($_POST['kirim'])) {
-
+                    //menampung data yang dikirim $POST
                     $nik = $_SESSION["nik"];
                     $judul = $_POST["judul_laporan"];
                     $isi = $_POST["isi_laporan"];
@@ -43,7 +43,9 @@ require '../config/koneksi.php';
                     $nama_foto = rand(0, 999) . '-' . $foto;
 
                     move_uploaded_file($tmp, $lokasi . $nama_foto);
-                    $query = mysqli_query($conn, "INSERT INTO pengaduan VALUES('','$tanggal','$nik','$judul','$isi','$nama_foto','$status')");
+                    $query = mysqli_query($conn, "INSERT INTO pengaduan VALUES('','$tanggal','$nik','$judul','$isi','$nama_foto','$status')");//kirim data ke pengaduan yg value nya ditampung
+
+                    //jika query/insert data berhasil/gagal maka tampilkan alert
                     if ($query) {
 
                         echo "
@@ -88,8 +90,9 @@ require '../config/koneksi.php';
                         <tbody>
                             <?php $i = 1; ?>
                             <?php
+                            //menampung data nik dari session yang dibuat setelah login
                             $nik = $_SESSION['nik'];
-                            $query = mysqli_query($conn, "SELECT * FROM pengaduan WHERE nik = '$nik'");
+                            $query = mysqli_query($conn, "SELECT * FROM pengaduan WHERE nik = '$nik'");//menampilkan data pengaduan
                             while ($p = mysqli_fetch_array($query)) : ?>
                                 <tr>
                                     <td><?= $i; ?></td>

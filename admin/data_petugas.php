@@ -21,9 +21,8 @@
                         </thead>
                         <tbody>
                             <?php
-
-include "../config/koneksi.php";
-                            $query = mysqli_query($conn, "SELECT * FROM petugas");
+                            include "../config/koneksi.php";
+                            $query = mysqli_query($conn, "SELECT * FROM petugas"); //query data dari tabel petugas
                             $no = 1;
                             while ($data = mysqli_fetch_array($query)) {
                             ?>

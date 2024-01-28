@@ -17,22 +17,27 @@ if ($level === 'masyarakat') {
     $login = 0;
 }
 
+//cek data apakah ada ?
 $cek = mysqli_num_rows($login);
 
 if ($cek > 0) {
+    //looping data
     $data = mysqli_fetch_assoc($login);
 
     if ($data['level'] == 'admin') {
+        //membuat session
         $_SESSION['id_petugas'] = $data['id_petugas'];
         $_SESSION['nama_petugas'] = $data['nama_petugas'];
         $_SESSION['login'] = "admin";
         header("location:../admin/");
     } elseif ($data['level'] == 'petugas') {
+        //membuat session
         $_SESSION['id_petugas'] = $data['id_petugas'];
         $_SESSION['nama_petugas'] = $data['nama_petugas'];
         $_SESSION['login'] = "petugas";
         header("location:../admin/");
     } elseif ($data['level'] == 'masyarakat') {
+        //membuat session
         $_SESSION['nik'] = $data['nik'];
         $_SESSION['nama'] = $data['nama'];
         $_SESSION['login'] = "masyarakat";
