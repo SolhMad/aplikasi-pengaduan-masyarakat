@@ -58,6 +58,7 @@
                                                     <div class="modal-body">
                                                         <form action="edit_data.php" method="POST">
                                                             <input type="hidden" name="id_tanggapan" class="form-control" value="<?= $data['id_tanggapan']; ?>">
+                                                            <input type="hidden" name="id_pengaduan" class="form-control" value="<?= $data['id_pengaduan']; ?>">
                                                             <p>Yakin mau dihapus Tanggapan <br> <?= $data['judul_pengaduan']; ?>?</p>
                                                     </div>
                                                     <div class="modal-footer">
