@@ -67,7 +67,9 @@
                 </div>
             </div>
         </div>
+
     </div>
+</div>
 </div>
 
 <!-- Modal Tambah Data-->

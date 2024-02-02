@@ -7,16 +7,16 @@
             </div>
             <div class="card-body px-0 pt-0 pb-2">
                 <div class="table-responsive p-0">
-                    <table class="table align-items-center mb-0">
+                    <table class="table table-striped align-items-center mb-0">
                         <thead class="text-center">
                             <tr>
-                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">No</th>
-                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Tanggal</th>
-                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Nik</th>
-                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Judul</th>
-                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Tanggapan</th>
-                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Status</th>
-                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Aksi</th>
+                                <th class="text-uppercase text-dark text-xs font-weight-bolder opacity-7">No</th>
+                                <th class="text-uppercase text-dark text-xs font-weight-bolder opacity-7 ps-2">Tanggal</th>
+                                <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Nik</th>
+                                <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Judul</th>
+                                <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Tanggapan</th>
+                                <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Status</th>
+                                <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Aksi</th>
                             </tr>
                         </thead>
                         <tbody class="text-center">

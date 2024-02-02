@@ -10,12 +10,12 @@
                     <table class="table table-striped align-items-center mb-0">
                         <thead>
                             <tr>
-                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">No</th>
-                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Nama</th>
-                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Username</th>
-                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Telepon</th>
-                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Level</th>
-                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Aksi</th>
+                                <th class="text-uppercase text-dark text-xs font-weight-bolder opacity-7">No</th>
+                                <th class="text-uppercase text-dark text-xs font-weight-bolder opacity-7 ps-2">Nama</th>
+                                <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Username</th>
+                                <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Telepon</th>
+                                <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Level</th>
+                                <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
