@@ -8,7 +8,7 @@
             <div class="card-body  px-0 pt-0 pb-2">
                 <div class="table-responsive p-0">
                     <table class="table table-striped align-items-center mb-0">
-                        <thead class="text-center">
+                        <thead>
                             <tr>
                                 <th class="text-uppercase text-dark text-xs font-weight-bolder opacity-7">No</th>
                                 <th class="text-uppercase text-dark text-xs font-weight-bolder opacity-7 ps-2">Nik</th>

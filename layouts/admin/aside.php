@@ -10,14 +10,16 @@
     <div class="navbar-collapse w-auto " id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <?php if ($_SESSION['login'] == 'admin') { ?>
+                <!-- Dashboard -->
                 <li class="nav-item">
-                    <a class="nav-link active" href="index.php">
+                    <a class="nav-link" href="index.php">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
                         </div>
                         <span class="nav-link-text ms-1">Dashboard</span>
                     </a>
                 </li>
+                <!-- Tanggapan -->
                 <li class="nav-item">
                     <a class="nav-link " href="index.php?page=tanggapan">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -26,6 +28,7 @@
                         <span class="nav-link-text ms-1">Data Tanggapan</span>
                     </a>
                 </li>
+                <!-- Pengaduan -->
                 <li class="nav-item">
                     <a class="nav-link " href="index.php?page=pengaduan">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -34,6 +37,7 @@
                         <span class="nav-link-text ms-1">Data Pengaduan</span>
                     </a>
                 </li>
+                <!-- Petugas -->
                 <li class="nav-item">
                     <a class="nav-link " href="index.php?page=petugas">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -42,6 +46,7 @@
                         <span class="nav-link-text ms-1">Data Petugas</span>
                     </a>
                 </li>
+                <!-- Masyarakat -->
                 <li class="nav-item">
                     <a class="nav-link " href="index.php?page=masyarakat">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -50,6 +55,7 @@
                         <span class="nav-link-text ms-1">Data Masyarakat</span>
                     </a>
                 </li>
+                <!-- Logout -->
                 <li class="nav-item">
                     <a class="nav-link " href="../config/aksi_logout.php">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -60,7 +66,7 @@
                 </li>
             <?php  } else { ?>
                 <li class="nav-item">
-                    <a class="nav-link active" href="index.php">
+                    <a class="nav-link" href="index.php">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
                         </div>
@@ -76,7 +82,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="index.php?page=pengaduan">
+                    <a class="nav-link active" href="index.php?page=pengaduan">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
                         </div>
