@@ -1,68 +1,72 @@
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col-md-12 mt-3">
 
             <div class="card">
-                <div class="card-header">
-                    DATA MASYARAKAT
+                <div class="card-header d-flex pb-0">
+                    <h6>DATA MASYARAKAT</h6>
+                    <a href="" class="btn btn-primary ms-auto" data-bs-toggle="modal" data-bs-target="#tambah">Tambah Data</a>
                 </div>
-                <div class="card-body">
-                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambah">Tambah Data</a>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Nik</th>
-                                <th>Nama</th>
-                                <th>Username</th>
-                                <th>Telepon</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            include "../config/koneksi.php";
-                            $query = mysqli_query($conn, "SELECT * FROM masyarakat"); //query data dari tabel masyarakat
-                            $no = 1;
-                            while ($data = mysqli_fetch_array($query)) {
-                            ?>
+                <div class="card-body  px-0 pt-0 pb-2">
+                    <div class="table-responsive p-0">
+                        <table class="table table-striped align-items-center mb-0">
+                            <thead class="text-center">
                                 <tr>
-                                    <td><?= $no++; ?></td>
-                                    <td><?= $data['nik']; ?></td>
-                                    <td><?= $data['nama']; ?></td>
-                                    <td><?= $data['username']; ?></td>
-                                    <td><?= $data['telp']; ?></td>
-                                    <td>
-                                        <!-- HAPUS -->
-                                        <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapus<?= $data['nik'] ?>">HAPUS</a>
-                                        <!-- modal HAPUS -->
-                                        <div class="modal fade" id="hapus<?= $data['nik'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h1 class="modal-title fs-5" id="hapusLabel">Hapus Data</h1>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form action="edit_data.php" method="POST">
-                                                            <input type="hidden" name="nik" class="form-control" value="<?= $data['nik']; ?>">
-                                                            <p>Yakin mau dihapus data <br> <?= $data['nama']; ?>?</p>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="submit" name="hapus_masyarakat" value="hapus_masyarakat" class="btn btn-danger">Hapus</button>
-                                                    </div>
-                                                    </form>
+                                    <th class="text-uppercase text-dark text-xs font-weight-bolder opacity-7">No</th>
+                                    <th class="text-uppercase text-dark text-xs font-weight-bolder opacity-7 ps-2">Nik</th>
+                                    <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Nama</th>
+                                    <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Username</th>
+                                    <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Telepon</th>
+                                    <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                include "../config/koneksi.php";
+                                $query = mysqli_query($conn, "SELECT * FROM masyarakat"); //query data dari tabel masyarakat
+                                $no = 1;
+                                while ($data = mysqli_fetch_array($query)) {
+                                ?>
+                                    <tr>
+                                        <td class="align-middle text-center text-sm"><?= $no++; ?></td>
+                                        <td class="align-middle text-start text-sm"><?= $data['nik']; ?></td>
+                                        <td class="align-middle text-start text-sm"><?= $data['nama']; ?></td>
+                                        <td class="align-middle text-start text-sm"><?= $data['username']; ?></td>
+                                        <td class="align-middle text-start text-sm"><?= $data['telp']; ?></td>
+                                        <td class="align-middle text-center">
+                                            <!-- HAPUS -->
+                                            <span class="badge badge-sm bg-danger">
+                                                <a href=" #" data-bs-toggle="modal" data-bs-target="#hapus<?= $data['nik'] ?>" style="text-decoration: none; color:white;">HAPUS</a>
+                                            </span>
+                                            <!-- modal HAPUS -->
+                                            <div class="modal fade" id="hapus<?= $data['nik'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h1 class="modal-title fs-5" id="hapusLabel">Hapus Data</h1>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form action="edit_data.php" method="POST">
+                                                                <input type="hidden" name="nik" class="form-control" value="<?= $data['nik']; ?>">
+                                                                <p>Yakin mau dihapus data <br> <?= $data['nama']; ?>?</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="submit" name="hapus_masyarakat" value="hapus_masyarakat" class="btn btn-danger">Hapus</button>
+                                                        </div>
+                                                        </form>
 
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <!-- /modal-HAPUS -->
-                                        <!-- /HAPUS -->
-                                    </td>
-                                </tr>
-                            <?php  } ?>
-                        </tbody>
-                    </table>
+                                            <!-- /modal-HAPUS -->
+                                            <!-- /HAPUS -->
+                                        </td>
+                                    </tr>
+                                <?php  } ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 

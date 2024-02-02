@@ -1,22 +1,21 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12 mt-3">
-
             <div class="card">
-                <div class="card-header">
+                <div class="card-header d-flex">
                     DATA PETUGAS
+                    <a href="#" class="btn btn-primary ms-auto " data-bs-toggle="modal" data-bs-target="#tambah">Tambah Data</a>
                 </div>
                 <div class="card-body">
-                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambah">Tambah Data</a>
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Nama</th>
-                                <th>Username</th>
-                                <th>Telepon</th>
-                                <th>Level</th>
-                                <th>Aksi</th>
+                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">No</th>
+                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Nama</th>
+                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Username</th>
+                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Telepon</th>
+                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Level</th>
+                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

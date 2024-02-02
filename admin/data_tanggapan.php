@@ -1,52 +1,68 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12 mt-3">
+        <div class="card mb-4">
+            <div class="card-header d-flex pb-0">
+                <h6>TANGGAPAN</h6>
+                <a href="export_tanggapan.php" class="btn btn-success ms-auto">Export</a>
 
-            <div class="card">
-                <div class="card-header">
-                    DATA TANGGAPAN
-                </div>
-                <div class="card-body">
-                    <a href="export_tanggapan.php" class="btn btn-success" target="_blank"> Export Excel</a>
-                    <table class="table table-striped">
-                        <thead>
+            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+                <div class="table-responsive p-0">
+                    <table class="table align-items-center mb-0">
+                        <thead class="text-center">
                             <tr>
-                                <th>No</th>
-                                <th>Tanggal</th>
-                                <th>Nik</th>
-                                <th>Judul</th>
-                                <th>Tanggapan</th>
-                                <th>Status</th>
-                                <th>Aksi</th>
+                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">No</th>
+                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Tanggal</th>
+                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Nik</th>
+                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Judul</th>
+                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Tanggapan</th>
+                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Status</th>
+                                <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Aksi</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="text-center">
                             <?php
 
                             include "../config/koneksi.php";
-                            $query = mysqli_query($conn, "SELECT a.*,b.* FROM tanggapan a INNER JOIN pengaduan b ON a.id_pengaduan = b.id_pengaduan");//query data dari tabel tanggapan dan pengaduan menggunakan INER JOIN
+                            $query = mysqli_query($conn, "SELECT a.*,b.* FROM tanggapan a INNER JOIN pengaduan b ON a.id_pengaduan = b.id_pengaduan"); //query data dari tabel tanggapan dan pengaduan menggunakan INER JOIN
                             $no = 1;
                             while ($data = mysqli_fetch_assoc($query)) {
                             ?>
                                 <tr>
-                                    <td><?= $no++; ?></td>
-                                    <td><?= $data['tgl_tanggapan']; ?></td>
-                                    <td><?= $data['nik']; ?></td>
-                                    <td><?= $data['judul_pengaduan']; ?></td>
-                                    <td><?= $data['tanggapan']; ?></td>
                                     <td>
-                                        <?php if ($data['status'] == 0) {
-                                            echo "<span class ='badge bg-danger text-light'>Menunggu</span>";
-                                        } elseif ($data['status'] == "proses") {
-                                            echo "<span class ='badge bg-warning text-dark'>Proses</span>";
-                                        } else {
-                                            echo "<span class ='badge bg-success text-light'>Selesai</span>";
-                                        }
-                                        ?>
+                                        <div class="text-xs text-center font-weight-bold mb-0">
+                                            <?= $no++; ?>
+                                        </div>
                                     </td>
-                                    <td>
+                                    <td class="align-middle text-center text-sm">
+                                        <?= $data['tgl_tanggapan']; ?>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <?= $data['nik']; ?>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <?= $data['judul_pengaduan']; ?>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <?= $data['tanggapan']; ?>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <span class="text-secondary text-xs font-weight-bold">
+                                            <?php if ($data['status'] == 0) {
+                                                echo "<span class ='badge bg-danger text-light'>Menunggu</span>";
+                                            } elseif ($data['status'] == "proses") {
+                                                echo "<span class ='badge bg-warning text-dark'>Proses</span>";
+                                            } else {
+                                                echo "<span class ='badge bg-success text-light'>Selesai</span>";
+                                            }
+                                            ?>
+                                        </span>
+                                    </td>
+                                    <td class="align-middle">
                                         <!-- HAPUS -->
-                                        <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapus<?= $data['id_tanggapan'] ?>">HAPUS</a>
+                                        <span class="badge badge-sm bg-danger">
+                                            <a href="#" class="" data-bs-toggle="modal" data-bs-target="#hapus<?= $data['id_tanggapan'] ?>" style="text-decoration:none; color:white;">HAPUS</a>
+                                        </span>
                                         <!-- modal HAPUS -->
                                         <div class="modal fade" id="hapus<?= $data['id_tanggapan'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
                                             <div class="modal-dialog">
@@ -59,7 +75,9 @@
                                                         <form action="edit_data.php" method="POST">
                                                             <input type="hidden" name="id_tanggapan" class="form-control" value="<?= $data['id_tanggapan']; ?>">
                                                             <input type="hidden" name="id_pengaduan" class="form-control" value="<?= $data['id_pengaduan']; ?>">
-                                                            <p>Yakin mau dihapus Tanggapan <br> <?= $data['judul_pengaduan']; ?>?</p>
+                                                            <p>Yakin mau dihapus Tanggapan <br>
+                                                                <?= $data['judul_pengaduan']; ?>?
+                                                            </p>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="submit" name="hapus_tanggapan" value="hapus_tanggapan" class="btn btn-danger">Hapus</button>
@@ -71,6 +89,7 @@
                                         </div>
                                         <!-- /modal-HAPUS -->
                                         <!-- /HAPUS -->
+                                        </a>
                                     </td>
                                 </tr>
                             <?php  } ?>
@@ -78,7 +97,6 @@
                     </table>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

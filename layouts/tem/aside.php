@@ -2,7 +2,7 @@
     <div class="sidenav-header">
         <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand m-0" href="index.php">
-            <img src="assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
+            <img src="../assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
             <span class="ms-1 font-weight-bold">Admin</span>
         </a>
     </div>
@@ -50,15 +50,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="index.php?page=hamas">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Halaman Masyarakat</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="first.php">
+                <a class="nav-link " href="../config/aksi_logout.php">
                     <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-user-run text-info text-sm opacity-10"></i>
                     </div>
