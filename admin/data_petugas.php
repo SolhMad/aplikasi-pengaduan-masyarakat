@@ -1,13 +1,13 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12 mt-3">
-            <div class="card">
-                <div class="card-header d-flex">
-                    DATA PETUGAS
-                    <a href="#" class="btn btn-primary ms-auto " data-bs-toggle="modal" data-bs-target="#tambah">Tambah Data</a>
-                </div>
-                <div class="card-body">
-                    <table class="table table-striped">
+        <div class="card">
+            <div class="card-header d-flex pb-0">
+                <h6>DATA PETUGAS</h6>
+                <a href="" class="btn btn-primary ms-auto" data-bs-toggle="modal" data-bs-target="#tambah">Tambah Data</a>
+            </div>
+            <div class="card-body  px-0 pt-0 pb-2">
+                <div class="table-responsive p-0">
+                    <table class="table table-striped align-items-center mb-0">
                         <thead>
                             <tr>
                                 <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">No</th>
@@ -26,14 +26,16 @@
                             while ($data = mysqli_fetch_array($query)) {
                             ?>
                                 <tr>
-                                    <td><?= $no++; ?></td>
-                                    <td><?= $data['nama_petugas']; ?></td>
-                                    <td><?= $data['username']; ?></td>
-                                    <td><?= $data['telp']; ?></td>
-                                    <td><?= $data['level']; ?></td>
-                                    <td>
+                                    <td class="align-middle text-center text-sm"><?= $no++; ?></td>
+                                    <td class="align-middle text-center text-sm"><?= $data['nama_petugas']; ?></td>
+                                    <td class="align-middle text-center text-sm"><?= $data['username']; ?></td>
+                                    <td class="align-middle text-center text-sm"><?= $data['telp']; ?></td>
+                                    <td class="align-middle text-center text-sm"><?= $data['level']; ?></td>
+                                    <td class="align-middle text-center">
                                         <!-- HAPUS -->
-                                        <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapus<?= $data['id_petugas'] ?>">HAPUS</a>
+                                        <span class="badge badge-sm bg-danger">
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#hapus<?= $data['id_petugas'] ?>" style="text-decoration: none; color: white;">HAPUS</a>
+                                        </span>
                                         <!-- modal HAPUS -->
                                         <div class="modal fade" id="hapus<?= $data['id_petugas'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
                                             <div class="modal-dialog">
@@ -64,7 +66,6 @@
                     </table>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
