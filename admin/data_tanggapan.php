@@ -10,8 +10,8 @@
                     <table class="table table-striped align-items-center mb-0">
                         <thead class="text-center">
                             <tr>
-                                <th class="text-uppercase text-dark text-xs font-weight-bolder opacity-7">No</th>
-                                <th class="text-uppercase text-dark text-xs font-weight-bolder opacity-7 ps-2">Tanggal</th>
+                                <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">No</th>
+                                <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7 ps-2">Tanggal</th>
                                 <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Nik</th>
                                 <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Judul</th>
                                 <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Tanggapan</th>

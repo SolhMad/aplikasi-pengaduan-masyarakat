@@ -66,7 +66,7 @@
             </h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-            <ul class="navbar-nav  justify-content-end">
+            <ul class="navbar-nav ms-md-auto pe-md-3 d-flex   justify-content-end">
                 <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
                         <div class="sidenav-toggler-inner">

@@ -14,7 +14,7 @@ require '../config/koneksi.php';
                     <form action="" method="POST" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="judul_laporan" class="form-label"> Judul Laporan </label>
-                            <input type="text" class="form-control" name="judul_laporan" id="judul_laporan" placeholder="Masukan Judul Laporan" required autocomplete="off">
+                            <input type="text" class="form-control" name="judul_laporan" id="judul_laporan" placeholder="Masukan Judul Laporan" required autocomplete="off" autofocus>
                         </div>
                         <div class="mb-3">
                             <label for="isi_laporan" class="form-label"> Isi Laporan </label>
@@ -43,7 +43,7 @@ require '../config/koneksi.php';
                     $nama_foto = rand(0, 999) . '-' . $foto;
 
                     move_uploaded_file($tmp, $lokasi . $nama_foto);
-                    $query = mysqli_query($conn, "INSERT INTO pengaduan VALUES('','$tanggal','$nik','$judul','$isi','$nama_foto','$status')");//kirim data ke pengaduan yg value nya ditampung
+                    $query = mysqli_query($conn, "INSERT INTO pengaduan VALUES('','$tanggal','$nik','$judul','$isi','$nama_foto','$status')"); //kirim data ke pengaduan yg value nya ditampung
 
                     //jika query/insert data berhasil/gagal maka tampilkan alert
                     if ($query) {
@@ -92,7 +92,7 @@ require '../config/koneksi.php';
                             <?php
                             //menampung data nik dari session yang dibuat setelah login
                             $nik = $_SESSION['nik'];
-                            $query = mysqli_query($conn, "SELECT * FROM pengaduan WHERE nik = '$nik'");//menampilkan data pengaduan
+                            $query = mysqli_query($conn, "SELECT * FROM pengaduan WHERE nik = '$nik'"); //menampilkan data pengaduan
                             while ($p = mysqli_fetch_array($query)) : ?>
                                 <tr>
                                     <td><?= $i; ?></td>
