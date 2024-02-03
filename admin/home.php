@@ -62,7 +62,7 @@ $jml_petugas = mysqli_num_rows($petugas); //menggunakan mysqli_num_rows untuk me
                 </div>
             </div>
             <!-- petugas -->
-            <div class="col-xl-3 col-sm-6">
+            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
                 <div class="card">
                     <div class="card-body p-3">
                         <div class="row">

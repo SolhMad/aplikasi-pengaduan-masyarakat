@@ -9,8 +9,8 @@
                     <table class="table table-striped align-items-center mb-0">
                         <thead class="text-center">
                             <tr>
-                                <th class="text-uppercase text-dark text-xs font-weight-bolder opacity-7">No</th>
-                                <th class="text-uppercase text-dark text-xs font-weight-bolder opacity-7 ps-2">Tanggal</th>
+                                <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">No</th>
+                                <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7 ps-2">Tanggal</th>
                                 <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Nama</th>
                                 <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Judul</th>
                                 <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Laporan</th>
@@ -133,33 +133,33 @@
                                                         <div class="modal-body">
                                                             <form action="" method="POST">
                                                                 <input type="hidden" name="id_pengaduan" class="form-control" value="<?= $data['id_pengaduan']; ?>">
-                                                                <div class="row mb-3">
-                                                                    <label class="label col-md-4">Tanggal</label>
-                                                                    <div class="col-md-8">
+                                                                <div class="row mb-2">
+                                                                    <label class="label col-2 me-auto">Tanggal</label>
+                                                                    <div class="col-12">
                                                                         <input type="text" name="tgl_pengaduan" class="form-control" value="<?= $data['tgl_pengaduan'] ?>" readonly>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row mb-3">
-                                                                    <label class="label col-md-4">Judul</label>
-                                                                    <div class="col-md-8">
+                                                                <div class="row mb-2">
+                                                                    <label class="label col-2 me-auto">Judul</label>
+                                                                    <div class="col-12">
                                                                         <input type="text" name="judul_pengaduan" class="form-control" value="<?= $data['judul_pengaduan'] ?>" readonly>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row mb-3">
-                                                                    <label class="label col-md-4">Isi</label>
-                                                                    <div class="col-md-8">
+                                                                <div class="row mb-2">
+                                                                    <label class="label col-2 me-auto">Isi</label>
+                                                                    <div class="col-12">
                                                                         <textarea type="text" name="isi_laporan" class="form-control" readonly><?= $data['isi_laporan'] ?> </textarea>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row mb-3">
-                                                                    <label class="label col-md-4">Foto</label>
-                                                                    <div class="col-md-8">
-                                                                        <img src="../database/img/<?= $data['foto'] ?>" width="100px">
+                                                                <div class="row mb-2">
+                                                                    <label class="label col-2 me-auto">Foto</label>
+                                                                    <div class="col-12 me-auto d-flex justify-content-start">
+                                                                        <img src="../database/img/<?= $data['foto'] ?>" width="120px">
                                                                     </div>
                                                                 </div>
-                                                                <div class="row mb-3">
-                                                                    <label class="label col-md-4">Tanggapan</label>
-                                                                    <div class="col-md-8">
+                                                                <div class="row mb-2">
+                                                                    <label class="label col-2 me-auto">Tanggapan</label>
+                                                                    <div class="col-12">
                                                                         <textarea type="text" name="tanggapan" class="form-control" required autofocus autocomplete="off"></textarea>
                                                                     </div>
                                                                 </div>

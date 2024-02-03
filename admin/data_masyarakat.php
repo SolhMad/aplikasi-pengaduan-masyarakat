@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="card">
             <div class="card-header d-flex pb-0">
@@ -10,8 +10,8 @@
                     <table class="table table-striped align-items-center mb-0">
                         <thead>
                             <tr>
-                                <th class="text-uppercase text-dark text-xs font-weight-bolder opacity-7">No</th>
-                                <th class="text-uppercase text-dark text-xs font-weight-bolder opacity-7 ps-2">Nik</th>
+                                <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">No</th>
+                                <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7 ps-2">Nik</th>
                                 <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Nama</th>
                                 <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Username</th>
                                 <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Telepon</th>
@@ -27,10 +27,10 @@
                             ?>
                                 <tr>
                                     <td class="align-middle text-center text-sm"><?= $no++; ?></td>
-                                    <td class="align-middle text-start text-sm"><?= $data['nik']; ?></td>
-                                    <td class="align-middle text-start text-sm"><?= $data['nama']; ?></td>
-                                    <td class="align-middle text-start text-sm"><?= $data['username']; ?></td>
-                                    <td class="align-middle text-start text-sm"><?= $data['telp']; ?></td>
+                                    <td class="align-middle text-center text-sm"><?= $data['nik']; ?></td>
+                                    <td class="align-middle text-center text-sm"><?= $data['nama']; ?></td>
+                                    <td class="align-middle text-center text-sm"><?= $data['username']; ?></td>
+                                    <td class="align-middle text-center text-sm"><?= $data['telp']; ?></td>
                                     <td class="align-middle text-center">
                                         <!-- HAPUS -->
                                         <span class="badge badge-sm bg-danger">
@@ -67,11 +67,8 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
-</div>
-
 <!-- Modal Tambah Data-->
 <div class="modal fade" id="tambah" tabindex="-1" aria-labelledby="verifikasiLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -85,31 +82,31 @@
                     <div class="row mb-3">
                         <label class="label col-md-4">Nik</label>
                         <div class="col-md-8">
-                            <input type="number" name="nik" class="form-control" placeholder="Masukan NIK" required autofocus>
+                            <input type="number" name="nik" class="form-control" placeholder="Masukan NIK" required autofocus autocomplete="off">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="label col-md-4">Nama Lengkap</label>
                         <div class="col-md-8">
-                            <input type="text" name="nama" class="form-control" placeholder="Masukan Nama" required>
+                            <input type="text" name="nama" class="form-control" placeholder="Masukan Nama" required autocomplete="off">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="label col-md-4">Username</label>
                         <div class="col-md-8">
-                            <input type="text" name="username" class="form-control" placeholder="Masukan Username" required>
+                            <input type="text" name="username" class="form-control" placeholder="Masukan Username" required autocomplete="off">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="label col-md-4">Password</label>
                         <div class="col-md-8">
-                            <input type="password" name="password" class="form-control" placeholder="Masukan Password" required>
+                            <input type="password" name="password" class="form-control" placeholder="Masukan Password" required autocomplete="off">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="label col-md-4">No.Telpon</label>
                         <div class="col-md-8">
-                            <input type="number" name="telp" class="form-control" placeholder="Masukan Telpon" required>
+                            <input type="number" name="telp" class="form-control" placeholder="Masukan Telpon" required autocomplete="off">
                         </div>
                     </div>
             </div>

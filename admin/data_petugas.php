@@ -10,8 +10,8 @@
                     <table class="table table-striped align-items-center mb-0">
                         <thead>
                             <tr>
-                                <th class="text-uppercase text-dark text-xs font-weight-bolder opacity-7">No</th>
-                                <th class="text-uppercase text-dark text-xs font-weight-bolder opacity-7 ps-2">Nama</th>
+                                <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">No</th>
+                                <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7 ps-2">Nama</th>
                                 <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Username</th>
                                 <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Telepon</th>
                                 <th class="text-center text-uppercase text-dark text-xs font-weight-bolder opacity-7">Level</th>
@@ -83,25 +83,25 @@
                     <div class="row mb-3">
                         <label class="label col-md-4">Nama Lengkap</label>
                         <div class="col-md-8">
-                            <input type="text" name="nama" class="form-control" placeholder="Masukan Nama" required>
+                            <input type="text" name="nama" class="form-control" placeholder="Masukan Nama" required autocomplete="off">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="label col-md-4">Username</label>
                         <div class="col-md-8">
-                            <input type="text" name="username" class="form-control" placeholder="Masukan Username" required>
+                            <input type="text" name="username" class="form-control" placeholder="Masukan Username" required autocomplete="off">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="label col-md-4">Password</label>
                         <div class="col-md-8">
-                            <input type="password" name="password" class="form-control" placeholder="Masukan Password" required>
+                            <input type="password" name="password" class="form-control" placeholder="Masukan Password" required autocomplete="off">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="label col-md-4">No.Telpon</label>
                         <div class="col-md-8">
-                            <input type="number" name="telp" class="form-control" placeholder="Masukan Telpon" required>
+                            <input type="number" name="telp" class="form-control" placeholder="Masukan Telpon" required autocomplete="off">
                         </div>
                     </div>
             </div>

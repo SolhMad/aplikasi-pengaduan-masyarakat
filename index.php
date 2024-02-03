@@ -6,11 +6,24 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>APEM | Aplikasi Pengaduan Masyarakat</title>
    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <style>
+     /* CSS untuk menambahkan background image */
+     .bg-image {
+       background-image: url('assets/satu.jpeg');
+       /* Sesuaikan path/to/your/image.jpg dengan path gambar Anda */
+       background-size: cover;
+       /* Menyesuaikan ukuran gambar dengan ukuran elemen */
+       background-position: center;
+       /* Menengahkan gambar */
+       min-height: 100vh;
+       /* Set tinggi elemen setara dengan tinggi viewport */
+     }
+   </style>
  </head>
 
- <body>
+ <body class="bg-image">
 
-   <nav class="navbar navbar-expand-lg bg-success bg-opacity-50">
+   <nav class="navbar navbar-expand-lg bg-primary ">
      <div class="container">
        <a class="navbar-brand" href="index.php">Aplikasi Pengaduan Masyarakat</a>
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +61,7 @@
     }
     ?>
 
-   <footer class="footer mt-3 py-2 bg-success bg-opacity-50">
+   <footer class="footer mt-3 py-2 bg-primary opacity-40">
      <div class="container">
        <p class="text-center"> UKK RPL 2023 | Ahmad Soleh | SMKN 1 Panyingkiran</p>
      </div>
