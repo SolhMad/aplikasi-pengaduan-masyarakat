@@ -69,14 +69,16 @@
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <h1 class="modal-title fs-5" id="verifikasiLabel"><?= $data['judul_pengaduan']; ?></h1>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            <button type="button" class="btn-close bg-dark" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
                                                             <form action="" method="POST">
                                                                 <input type="hidden" name="id_pengaduan" class="form-control" value="<?= $data['id_pengaduan']; ?>">
-                                                                <div class="row mb-3">
-                                                                    <label class="label col-md-4">Status</label>
-                                                                    <div class="col-md-8">
+                                                                <div class="row">
+                                                                    <label class="label col-md-2 me-auto">Status</label>
+                                                                </div>
+                                                                <div class="row mb-3 ">
+                                                                    <div class="col-md-3">
                                                                         <select class="form-control" name="status">
                                                                             <option value="proses">Proses</option>
                                                                             <option value="0">Tolak</option>
@@ -128,7 +130,7 @@
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <h1 class="modal-title fs-5" id="tanggapiLabel"><?= $data['judul_pengaduan']; ?></h1>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            <button type="button" class="btn-close bg-dark" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
                                                             <form action="" method="POST">
@@ -221,7 +223,7 @@
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h1 class="modal-title fs-5" id="hapusLabel">Hapus Data</h1>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        <button type="button" class="btn-close bg-dark" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
                                                         <form action="edit_data.php" method="POST">
@@ -247,7 +249,7 @@
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <h1 class="modal-title fs-5" id="hapusLabel">Hapus Data</h1>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            <button type="button" class="btn-close bg-dark" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
                                                             <form action="edit_data.php" method="POST">

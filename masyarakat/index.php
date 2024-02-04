@@ -16,6 +16,9 @@
       case 'tanggapan':
         include 'tanggapan.php';
         break;
+      case 'aduan':
+        include 'aduan.php';
+        break;
       default:
         echo "HALAMAN TAK TERSEDIA";
         break;

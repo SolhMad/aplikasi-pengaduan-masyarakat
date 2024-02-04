@@ -23,7 +23,18 @@
                         <div class="d-grid">
                             <button type="submit" name="kirim" class="btn btn-success">LOGIN</button>
                         </div>
-                        <a href="index.php?page=registrasi" style="text-decoration: none;">Belum Punya Account ?</a>
+                        <div class="row mt-1 mb-1">
+                            <div class="col-6">
+                                <div class="d-grid">
+                                    <a href="index.php" class="btn btn-danger btn-block">Kembali</a>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-grid">
+                                    <a href="index.php?page=registrasi" class="btn btn-primary btn-block">Registrasi</a>
+                                </div>
+                            </div>
+                        </div>
                 </div>
                 </form>
             </div>

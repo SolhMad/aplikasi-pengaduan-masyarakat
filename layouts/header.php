@@ -19,15 +19,32 @@
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+
+  <style>
+    /* Media query untuk layar desktop */
+    @media screen and (min-width: 768px) {
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg bg-success bg-opacity-50">
     <div class="container">
-      <a class="navbar-brand" href="index.php">Aplikasi Pengaduan Masyarakat</a>
+      <a class="navbar-brand font-weight-bolder " href="index.php">
+        <h5>Aplikasi Pengaduan Masyarakat</h5>
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <i class="navbar-toggler-line bg-white"></i>
+        <i class="navbar-toggler-line bg-white"></i>
+        <i class="navbar-toggler-line bg-white"></i>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
@@ -42,6 +59,7 @@
             <a class="nav-link" href="index.php?page=pengaduan">Data Pengaduan</a>
             <a class="nav-link" href="../config/aksi_logout.php">Log-out</a>
           <?php  } elseif ($_SESSION["login"] == 'masyarakat') { ?>
+            <a class="nav-link" href="index.php?page=aduan">Daftar Pengaduan </a>
             <a class="nav-link" href="../config/aksi_logout.php">Log-out</a>
           <?php  } else { ?>
             <a class="nav-link" href="index.php?page=registrasi">Daftar Akun</a>

@@ -5,12 +5,11 @@ require '../config/koneksi.php';
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <p>Selamat Datang <?= $_SESSION["nama"]; ?></p>
+            <h4>Selamat Datang <?= $_SESSION["nama"]; ?></h4>
             <div class="card">
-                <div class="card-header">
-                    FORM PENGADUAN
-                </div>
                 <div class="card-body">
+                    FORM PENGADUAN <br>
+                    <hr class="bg-dark">
                     <form action="" method="POST" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="judul_laporan" class="form-label"> Judul Laporan </label>
@@ -65,90 +64,6 @@ require '../config/koneksi.php';
                 }
                 ?>
             </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-12 mt-3">
-
-            <div class="card">
-                <div class="card-header">
-                    TABEL PENGADUAN SAYA
-                </div>
-                <div class="card-body">
-                    <table class="table table-striped" style="max-width:100%;">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Judul</th>
-                                <th>Isi</th>
-                                <th>Foto</th>
-                                <th>Status</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $i = 1; ?>
-                            <?php
-                            //menampung data nik dari session yang dibuat setelah login
-                            $nik = $_SESSION['nik'];
-                            $query = mysqli_query($conn, "SELECT * FROM pengaduan WHERE nik = '$nik'"); //menampilkan data pengaduan
-                            while ($p = mysqli_fetch_array($query)) : ?>
-                                <tr>
-                                    <td><?= $i; ?></td>
-                                    <td><?= $p['judul_pengaduan']; ?></td>
-                                    <td><?= $p['isi_laporan']; ?></td>
-                                    <td><img src="../database/img/<?= $p['foto']; ?>" alt="Ini Foto" width="80px"></td>
-                                    <td>
-                                        <!-- cek dari database table pengaduan column statusnya apa -->
-                                        <?php if ($p['status'] == 0) {
-                                            echo "<span class ='badge bg-danger text-light'>Menunggu</span>";
-                                        } elseif ($p['status'] == "proses") {
-                                            echo "<span class ='badge bg-warning text-dark'>Proses</span>";
-                                        } else {
-                                            echo "<span class ='badge bg-success text-light'>Selesai</span>";
-                                            echo "</br>";
-                                            echo "<a href='index.php?page=tanggapan&id_pengaduan=$p[id_pengaduan]'>Lihat Tanggapan</a>";
-                                        }
-                                        ?>
-
-                                    </td>
-                                    <td>
-                                        <!-- Modal HAPUS -->
-                                        <!-- HAPUS -->
-                                        <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapus<?= $p['nik'] ?>">HAPUS</a>
-                                        <!-- modal HAPUS -->
-                                        <div class="modal fade" id="hapus<?= $p['nik'] ?>" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h1 class="modal-title fs-5" id="hapusLabel">Hapus Data</h1>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form action="edit_data.php" method="POST">
-                                                            <input type="hidden" name="id_pengaduan" class="form-control" value="<?= $p['id_pengaduan']; ?>">
-                                                            <p>Yakin mau dihapus data <br> <?= $p['judul_pengaduan']; ?>?</p>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="submit" name="hapus_pengaduan" class="btn btn-danger">Hapus</button>
-                                                    </div>
-                                                    </form>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- /modal-HAPUS -->
-                                        <!-- /HAPUS -->
-                                    </td>
-                                </tr>
-                                <?php $i++ ?>
-                            <?php endwhile; ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
         </div>
     </div>
 </div>
