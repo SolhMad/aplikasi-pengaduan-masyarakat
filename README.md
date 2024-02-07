@@ -24,5 +24,5 @@
 
 ## Download
 silahkan click tombol ini untuk mendownload .zip 👉
-[![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue.svg)](https://github.com/SolhMad/apem-V2/archive/master.zip)
+[![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue.svg)](https://github.com/SolhMad/aplikasi-pengaduan-masyarakat/archive/main.zip)
 
