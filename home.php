@@ -3,16 +3,22 @@
         <a class="navbar-brand font-weight-bolder" href="index.php">
             <h5 style="color:white;">Aplikasi Pengaduan Masyarakat</h5>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="navbar-toggler" id="navbar" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+            <ul class="navbar-nav ms-md-auto justify-content-end">
+                <div class="sidenav-toggler-inner">
+                    <i class="sidenav-toggler-line bg-white"></i>
+                    <i class="sidenav-toggler-line bg-white"></i>
+                    <i class="sidenav-toggler-line bg-white"></i>
+                </div>
+            </ul>
+        </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=registrasi">Daftar Akun</a>
+                    <a class="nav-link" href="index.php?page=registrasi" style="color: white;">Daftar Akun</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=login">Login</a>
+                    <a class="nav-link" href="index.php?page=login" style="color: white;">Login</a>
             </ul>
         </div>
     </div>

@@ -10,8 +10,8 @@
               <input type="number" class="form-control" name="nik" id="nik" placeholder="Masukan Nik Kamuh" required autocomplete="off" autofocus>
             </div>
             <div class="">
-              <label for="nama"> Nama Lengkap </label>
-              <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukan Nama Lengkap" required autocomplete="off">
+              <label for="nama_lengkap"> Nama Lengkap </label>
+              <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap" placeholder="Masukan Nama Lengkap" required autocomplete="off">
             </div>
             <div class="">
               <label for="username"> Username </label>
@@ -61,7 +61,7 @@ if (isset($_POST["kirim"])) {
 
   //TANGKAP DATA DARI VAR POST DI DALAM FORM
   $nik = htmlspecialchars($_POST["nik"]);
-  $nama = htmlspecialchars($_POST["nama"]);
+  $nama = htmlspecialchars($_POST["nama_lengkap"]);
   $username = htmlspecialchars($_POST["username"]);
   $password = htmlspecialchars(md5($_POST["password"]));
   $telp = htmlspecialchars($_POST["telp"]);
@@ -69,7 +69,7 @@ if (isset($_POST["kirim"])) {
 
   //INSERT DATA KE TABEL MASYARAKAT
   $query = mysqli_query($conn, "INSERT INTO masyarakat 
-                        VALUES ('$nik','$nama','$username','$password','$telp','$level') ");
+                        VALUES ('$nik','$nama','$username','$password','$telp','$level',) ");
 
 
   //Pengkondisian SETELAH INSERT AKAN DI BAWA KEMANA
