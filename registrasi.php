@@ -69,7 +69,7 @@ if (isset($_POST["kirim"])) {
 
   //INSERT DATA KE TABEL MASYARAKAT
   $query = mysqli_query($conn, "INSERT INTO masyarakat 
-                        VALUES ('$nik','$nama','$username','$password','$telp','$level',) ");
+                        VALUES ('$nik','$nama','$username','$password','$telp','$level') ");
 
 
   //Pengkondisian SETELAH INSERT AKAN DI BAWA KEMANA
