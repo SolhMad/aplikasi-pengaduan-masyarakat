@@ -41,11 +41,15 @@
       <a class="navbar-brand font-weight-bolder " href="index.php">
         <h5>Aplikasi Pengaduan Masyarakat</h5>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="navbar-toggler-line bg-white"></i>
-        <i class="navbar-toggler-line bg-white"></i>
-        <i class="navbar-toggler-line bg-white"></i>
-      </button>
+      <div class="navbar-toggler" id="navbar" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+        <ul class="navbar-nav ms-md-auto justify-content-end">
+          <div class="sidenav-toggler-inner">
+            <i class="sidenav-toggler-line bg-white"></i>
+            <i class="sidenav-toggler-line bg-white"></i>
+            <i class="sidenav-toggler-line bg-white"></i>
+          </div>
+        </ul>
+      </div>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <?php if ($_SESSION["login"] == 'admin') { ?>
@@ -59,6 +63,7 @@
             <a class="nav-link" href="index.php?page=pengaduan">Data Pengaduan</a>
             <a class="nav-link" href="../config/aksi_logout.php">Log-out</a>
           <?php  } elseif ($_SESSION["login"] == 'masyarakat') { ?>
+            <a class="nav-link" href="index.php">Form Pengaduan</a>
             <a class="nav-link" href="index.php?page=aduan">Daftar Pengaduan </a>
             <a class="nav-link" href="../config/aksi_logout.php">Log-out</a>
           <?php  } else { ?>
@@ -69,3 +74,46 @@
       </div>
     </div>
   </nav>
+
+  <!-- Navbar Light -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white z-index-3 py-3">
+    <div class="container">
+      <a class="navbar-brand" href="" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
+        Argon Dashboard
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav navbar-nav-hover ms-auto">
+          <div class="row">
+            <div class="col-auto m-auto">
+              <a class="cursor-pointer">
+                <i class="fa fa-cog fixed-plugin-button-nav"></i>
+              </a>
+            </div>
+            <div class="col-auto m-auto">
+              <div class="dropdown">
+                <a class="cursor-pointer" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa fa-bell"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right px-2 py-3 ms-n4" aria-labelledby="dropdownMenuButton">
+                  ...
+                </ul>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="bg-white border-radius-lg d-flex me-2">
+                <input type="text" class="form-control border-0 ps-3" placeholder="Type here...">
+                <button class="btn bg-gradient-primary my-1 me-1">Search</button>
+              </div>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+
+
+  </div>
