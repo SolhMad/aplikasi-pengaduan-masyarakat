@@ -33,7 +33,7 @@ if (!empty($_GET['id_pengaduan'])) {
                                 </div>
                     </div>
                     <div class="card-footer">
-                        <a href="index.php" class="btn btn-success">Kembali</a>
+                        <a href="index.php?page=aduan" class="btn btn-success">Kembali</a>
                     </div>
                 <?php  } ?>
                 </form>

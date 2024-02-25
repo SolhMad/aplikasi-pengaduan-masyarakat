@@ -44,6 +44,7 @@
                                             <span class="text-secondary text-xs font-weight-bold">
                                                 <?php if ($data['status'] == "selesai") {
                                                     echo "<span class ='badge bg-success text-light'>Selesai</span>";
+                                                    echo "<br><a href='index.php?page=tanggapan&id_pengaduan=$data[id_pengaduan]'>lihat tanggapan<a>";
                                                 } elseif ($data['status'] == "proses") {
                                                     echo "<span class ='badge bg-warning text-dark'>Proses</span>";
                                                 } elseif ($data['status'] == "tolak") {
