@@ -47,12 +47,14 @@
                                     </td>
                                     <td class="align-middle text-center">
                                         <span class="text-secondary text-xs font-weight-bold">
-                                            <?php if ($data['status'] == 0) {
-                                                echo "<span class ='badge bg-danger text-light'>Menunggu</span>";
+                                            <?php if ($data['status'] == "selesai") {
+                                                echo "<span class ='badge bg-success text-light'>Selesai</span>";
                                             } elseif ($data['status'] == "proses") {
                                                 echo "<span class ='badge bg-warning text-dark'>Proses</span>";
+                                            } elseif ($data['status'] == "tolak") {
+                                                echo "<span class ='badge bg-danger text-light'>Ditolak</span>";
                                             } else {
-                                                echo "<span class ='badge bg-success text-light'>Selesai</span>";
+                                                echo "<span class ='badge bg-danger text-light'>Menunggu</span>";
                                             }
                                             ?>
                                         </span>

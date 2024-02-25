@@ -47,12 +47,14 @@
                                     </td>
                                     <td class="align-middle text-center">
                                         <span class="text-secondary text-xs font-weight-bold">
-                                            <?php if ($data['status'] == 0) {
-                                                echo "<span class ='badge bg-danger text-light'>Menunggu</span>";
+                                            <?php if ($data['status'] == "selesai") {
+                                                echo "<span class ='badge bg-success text-light'>Selesai</span>";
                                             } elseif ($data['status'] == "proses") {
                                                 echo "<span class ='badge bg-warning text-dark'>Proses</span>";
+                                            } elseif ($data['status'] == "tolak") {
+                                                echo "<span class ='badge bg-danger text-light'>Ditolak</span>";
                                             } else {
-                                                echo "<span class ='badge bg-success text-light'>Selesai</span>";
+                                                echo "<span class ='badge bg-danger text-light'>Menunggu</span>";
                                             }
                                             ?>
                                         </span>
@@ -75,13 +77,13 @@
                                                             <form action="" method="POST">
                                                                 <input type="hidden" name="id_pengaduan" class="form-control" value="<?= $data['id_pengaduan']; ?>">
                                                                 <div class="row">
-                                                                    <label class="label col-md-2 me-auto">Status</label>
-                                                                </div>
-                                                                <div class="row mb-3 ">
-                                                                    <div class="col-md-3">
+                                                                    <div class="col-2">
+                                                                        <label class="label col-md-2 me-auto">Status</label>
+                                                                    </div>
+                                                                    <div class="col-3">
                                                                         <select class="form-control" name="status">
                                                                             <option value="proses">Proses</option>
-                                                                            <option value="0">Tolak</option>
+                                                                            <option value="tolak">Tolak</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
